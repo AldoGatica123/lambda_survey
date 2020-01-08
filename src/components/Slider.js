@@ -71,6 +71,7 @@ export default function TextMobileStepper() {
         />
         <Typography>{tutorialSteps[activeStep].label}</Typography>
       </Paper>
+
       <MobileStepper
         steps={maxSteps}
         position="static"
@@ -88,7 +89,9 @@ export default function TextMobileStepper() {
             Back
           </Button>
         }
-      />
+      >
+
+      </MobileStepper>
     </div>
   );
 }
