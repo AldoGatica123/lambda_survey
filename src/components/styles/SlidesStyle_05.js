@@ -15,27 +15,34 @@ export default (theme) => ({
     width: "80%",
     marginLeft: "auto",
     marginRight: "auto",
-    marginTop: "auto",
-    display: "flex",
+  },
+  space: {
+    height: "10%",
+  },
+  innerPaper: {
+    width: "105%",
+    marginLeft: theme.spacing.unit * -3,
   },
   container:{
     height: "100vh",
     width: "100%",
   },
-  inner_container:{
-    width: "100%",
-    textAlign: "center",
-  },
-  typo_white:{
-    padding: theme.spacing.unit * 4,
+  title:{
+    padding: theme.spacing.unit * 10,
+    paddingBottom:  theme.spacing.unit * 5,
     color: 'white',
   },
   typo_black:{
     padding: theme.spacing.unit * 4,
     color: 'black',
   },
-  selectEmpty: {
-    marginBottom: theme.spacing.unit * 5,
+  typo_gray:{
+    padding: theme.spacing.unit * 4,
+    color: 'gray',
+  },
+  slider: {
+    marginTop: theme.spacing.unit * 3,
+    marginBottom: theme.spacing.unit * 3,
     width: "50%",
     maxWidth: "600px",
   },

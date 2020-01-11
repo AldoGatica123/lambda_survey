@@ -30,8 +30,8 @@ export default (theme) => ({
     color: 'white',
   },
   datePicker: {
-    marginTop: theme.spacing.unit * 5,
-    marginBottom: theme.spacing.unit * 15,
+    marginTop: theme.spacing.unit * 8,
+    marginBottom: theme.spacing.unit * 8,
     width: "50%",
     maxWidth: "600px",
   },

@@ -25,6 +25,11 @@ export default (theme) => ({
   inner_container:{
     width: "100%",
     textAlign: "center",
+    padding: theme.spacing.unit * 5,
+  },
+  toggle_containerse:{
+    width: "100%",
+    textAlign: "center",
   },
   typo_white:{
     padding: theme.spacing.unit * 4,
@@ -34,8 +39,7 @@ export default (theme) => ({
     padding: theme.spacing.unit * 4,
     color: 'black',
   },
-  selectEmpty: {
-    marginBottom: theme.spacing.unit * 5,
+  toggle_container: {
     width: "50%",
     maxWidth: "600px",
   },

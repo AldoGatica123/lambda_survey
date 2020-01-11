@@ -63,15 +63,6 @@ export default function TextMobileStepper() {
 
   return (
     <div className={classes.root}>
-      <Paper square elevation={0} className={classes.header}>
-        <img
-          className={classes.img}
-          src={tutorialSteps[activeStep].imgPath}
-          alt={tutorialSteps[activeStep].label}
-        />
-        <Typography>{tutorialSteps[activeStep].label}</Typography>
-      </Paper>
-
       <MobileStepper
         steps={maxSteps}
         position="static"
@@ -92,6 +83,16 @@ export default function TextMobileStepper() {
       >
 
       </MobileStepper>
+      <Paper square elevation={0} className={classes.header}>
+        <img
+          className={classes.img}
+          src={tutorialSteps[activeStep].imgPath}
+          alt={tutorialSteps[activeStep].label}
+        />
+        <Typography>{tutorialSteps[activeStep].label}</Typography>
+      </Paper>
+
+
     </div>
   );
 }

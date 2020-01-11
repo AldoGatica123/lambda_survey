@@ -15,7 +15,11 @@ export default (theme) => ({
     width: "80%",
     marginLeft: "auto",
     marginRight: "auto",
-    padding: theme.spacing.unit * 3,
+    marginTop: theme.spacing.unit * 2,
+    paddingTop: theme.spacing.unit * 2,
+    paddingBottom: theme.spacing.unit * 8,
+    paddingLeft: theme.spacing.unit * 6,
+    paddingRight: theme.spacing.unit * 6,
   },
   container:{
     height: "100vh",
@@ -27,7 +31,7 @@ export default (theme) => ({
     color: 'white',
   },
   typo:{
-    padding: theme.spacing.unit * 4,
+    padding: theme.spacing.unit * 6,
     color: 'black',
   },
   button:{

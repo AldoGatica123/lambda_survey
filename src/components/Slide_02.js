@@ -24,7 +24,7 @@ class Slide_02 extends Component {
             </Typography>
 
             <Paper className={classes.paper} elevation={2} square={false}>
-              <TextField name="birthday" label="Fecha de la Encuesta MM/DD/AAAA" defaultValue="2000-12-31" required
+              <TextField name="birthday" label="Fecha de la Encuesta" defaultValue="2000-12-31"
                          className={classes.datePicker} type="date" onChange={handleChange} value={values}
                          InputLabelProps={{shrink: true,}}/>
             </Paper>
