@@ -1,29 +1,16 @@
 export default (theme) => ({
-  base: {
+  root: {
     width: "100%",
-    height: "100%",
-    flexDirection: "column",
-  },
-  background: {
-    minHeight: "100%",
-    height: "100vh",
-    width: "100%",
-    textAlign: "center",
+    height: "94.5vh",
     backgroundColor: 'teal',
   },
   paper: {
     width: "80%",
     marginLeft: "auto",
     marginRight: "auto",
-    marginTop: theme.spacing.unit * 2,
+    marginTop: theme.spacing.unit * 6,
     paddingTop: theme.spacing.unit * 2,
     paddingBottom: theme.spacing.unit * 8,
-    paddingLeft: theme.spacing.unit * 6,
-    paddingRight: theme.spacing.unit * 6,
-  },
-  container:{
-    height: "100vh",
-    width: "100%",
   },
   title:{
     padding: theme.spacing.unit * 6,
@@ -31,7 +18,7 @@ export default (theme) => ({
     color: 'white',
   },
   typo:{
-    padding: theme.spacing.unit * 6,
+    padding: theme.spacing.unit * 4,
     color: 'black',
   },
   button:{

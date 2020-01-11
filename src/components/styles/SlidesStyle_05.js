@@ -1,8 +1,8 @@
 export default (theme) => ({
-  base: {
-    width: "100vw",
-    height: "100vh",
-    backgroundPosition: "center"
+  root: {
+    width: "100%",
+    height: "94.5vh",
+    backgroundColor: 'teal',
   },
   background: {
     minHeight: "100%",

@@ -12,15 +12,11 @@ class Landing extends Component {
     return (
 
       <div className={classes.base}>
-        <div className={classes.container}>
-          <div className={classes.background}>
-            <img className={classes.logo} src={logo} alt={logo}/>
-            <Typography className={classes.typo} variant={"h4"} component={"h4"}> Encuesta de satisfacción de servicio</Typography>
-            <Fab variant="extended" color="white" aria-label="add" className={classes.button}>
-              Inicia
-            </Fab>
-          </div>
-        </div>
+        <img className={classes.logo} src={logo} alt={logo}/>
+        <Typography className={classes.typo} variant={"h4"} component={"h4"}> Encuesta de satisfacción de servicio</Typography>
+        <Fab variant="extended" color="white" aria-label="add" className={classes.button}>
+          Inicia
+        </Fab>
       </div>
     );
   }

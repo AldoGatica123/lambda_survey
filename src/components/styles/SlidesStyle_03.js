@@ -1,14 +1,7 @@
 export default (theme) => ({
-  base: {
-    width: "100vw",
-    height: "100vh",
-    backgroundPosition: "center"
-  },
-  background: {
-    minHeight: "100%",
-    height: "100%",
+  root: {
     width: "100%",
-    textAlign: "center",
+    height: "94.5vh",
     backgroundColor: 'teal',
   },
   paper: {
@@ -17,10 +10,6 @@ export default (theme) => ({
     marginRight: "auto",
     marginTop: "auto",
     display: "flex",
-  },
-  container:{
-    height: "100vh",
-    width: "100%",
   },
   inner_container:{
     width: "100%",

@@ -17,8 +17,8 @@ class Slide_05 extends Component {
 
     const marks = [
       {
-        value: 0,
-        label: '0',
+        value: 1,
+        label: '1',
       },
       {
         value: 5,
@@ -28,44 +28,40 @@ class Slide_05 extends Component {
 
     return (
 
-      <div className={classes.base}>
-        <div className={classes.container}>
-          <div className={classes.background}>
-            <div className={classes.space}>
-            </div>
-
-            <Paper className={classes.paper} elevation={2} square={false}>
-              <Paper className={classes.innerPaper} elevation={2} square={false}>
-                <Typography className={classes.typo_gray} variant={"h5"} component={"h5"}>
-                  <b>Puntee del 1 (muy malo) a 5 (muy bueno) los siguientes aspectos del espacio seguro.</b>
-                </Typography>
-              </Paper>
-
-              <Typography className={classes.typo_black} variant={"h5"} component={"h5"}>
-                <b>Estado de las instalaciones del espacio seguro</b>
-              </Typography>
-              <Slider
-                className={classes.slider}
-                defaultValue={5}
-                getAriaValueText={valuetext}
-                aria-labelledby="discrete-slider"
-                valueLabelDisplay="auto"
-                marks={marks}
-                step={1}
-                min={0}
-                max={5}
-              />
-              <Typography className={classes.typo_gray} variant={"h6"} component={"h6"}>
-                <b>Deslice su dedo para indicar su calificación</b>
-              </Typography>
-
-            </Paper>
-
-            <Fab variant="extended" color="white" aria-label="add" className={classes.button}>
-              Siguiente
-            </Fab>
-          </div>
+      <div className={classes.root}>
+        <div className={classes.space}>
         </div>
+
+        <Paper className={classes.paper} elevation={2} square={false}>
+          <Paper className={classes.innerPaper} elevation={2} square={false}>
+            <Typography className={classes.typo_gray} variant={"h5"} component={"h5"}>
+              <b>Puntee del 1 (muy malo) a 5 (muy bueno) los siguientes aspectos del espacio seguro.</b>
+            </Typography>
+          </Paper>
+
+          <Typography className={classes.typo_black} variant={"h5"} component={"h5"}>
+            <b>Estado de las instalaciones del espacio seguro</b>
+          </Typography>
+          <Slider
+            className={classes.slider}
+            defaultValue={5}
+            getAriaValueText={valuetext}
+            aria-labelledby="discrete-slider"
+            valueLabelDisplay="auto"
+            marks={marks}
+            step={1}
+            min={1}
+            max={5}
+          />
+          <Typography className={classes.typo_gray} variant={"h6"} component={"h6"}>
+            <b>Deslice su dedo para indicar su calificación</b>
+          </Typography>
+
+        </Paper>
+
+        <Fab variant="extended" color="white" aria-label="add" className={classes.button}>
+          Siguiente
+        </Fab>
       </div>
     );
   }
