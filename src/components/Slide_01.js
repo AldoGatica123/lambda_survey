@@ -7,6 +7,11 @@ import Paper from "@material-ui/core/Paper";
 
 class Slide_01 extends Component {
 
+  continue = (e) => {
+    e.preventDefault();
+    this.props.nextStep();
+  };
+
   render() {
     const {classes} = this.props;
     return (
@@ -23,7 +28,7 @@ class Slide_01 extends Component {
           Un Espacio Seguro es un tipo de espacio físico o móvil donde grupos o personas pueden sentirse “seguras”, construir redes sociales, expresarse y entretenerse mientras reciben información y acceden a servicios de protección y asistencia de acuerdo con el enfoque de edad, género y diversidad, el enfoque centrado en la persona sobreviviente y el principio del interés superior de la niña o niño.
         </Paper>
 
-        <Fab variant="extended" color="white" aria-label="add" className={classes.button}>
+        <Fab className={classes.button} onClick={this.continue} variant="extended" color="white" aria-label="add">
           Siguiente
         </Fab>
       </div>

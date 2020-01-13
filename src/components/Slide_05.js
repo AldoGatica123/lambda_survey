@@ -8,6 +8,11 @@ import Slider from "@material-ui/core/Slider"
 
 class Slide_05 extends Component {
 
+  continue = (e) => {
+    e.preventDefault();
+    this.props.nextStep();
+  };
+
   render() {
     const {classes, handleChange, values} = this.props;
 
@@ -56,10 +61,9 @@ class Slide_05 extends Component {
           <Typography className={classes.typo_gray} variant={"h6"} component={"h6"}>
             <b>Deslice su dedo para indicar su calificación</b>
           </Typography>
-
         </Paper>
 
-        <Fab variant="extended" color="white" aria-label="add" className={classes.button}>
+        <Fab className={classes.button} onClick={this.continue} variant="extended" color="white" aria-label="add">
           Siguiente
         </Fab>
       </div>

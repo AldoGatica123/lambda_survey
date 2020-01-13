@@ -9,6 +9,11 @@ import MenuItem from "@material-ui/core/MenuItem"
 
 class Slide_03 extends Component {
 
+  continue = (e) => {
+    e.preventDefault();
+    this.props.nextStep();
+  };
+
   render() {
     const {classes, handleChange, age} = this.props;
     return (
@@ -52,7 +57,7 @@ class Slide_03 extends Component {
           </div>
         </Paper>
 
-        <Fab variant="extended" color="white" aria-label="add" className={classes.button}>
+        <Fab className={classes.button} onClick={this.continue} variant="extended" color="white" aria-label="add">
           Siguiente
         </Fab>
       </div>

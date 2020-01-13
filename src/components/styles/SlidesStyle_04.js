@@ -9,24 +9,28 @@ export default (theme) => ({
     marginLeft: "auto",
     marginRight: "auto",
     marginTop: "auto",
-    display: "flex",
+    display: "table",
   },
-  inner_container:{
+  row_container:{
+    display: "table-row",
+    textAlign: "left",
+  },
+  toggle_group:{
+    width: "95%",
+  },
+  toggle_button: {
+    backgroundColor: "white",
     width: "100%",
-    textAlign: "center",
-    padding: theme.spacing.unit * 5,
   },
   typo_white:{
     padding: theme.spacing.unit * 4,
     color: 'white',
   },
   typo_black:{
-    padding: theme.spacing.unit * 4,
-    color: 'black',
-  },
-  toggle_container: {
-    width: "50%",
-    maxWidth: "600px",
+    padding: theme.spacing.unit * 3,
+    display: "table-cell",
+    width: "35%",
+    color: 'dimgray',
   },
   button:{
     margin: theme.spacing.unit * 3,

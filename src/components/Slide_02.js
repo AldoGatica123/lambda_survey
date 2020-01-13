@@ -8,6 +8,11 @@ import TextField from "@material-ui/core/TextField"
 
 class Slide_02 extends Component {
 
+  continue = (e) => {
+    e.preventDefault();
+    this.props.nextStep();
+  };
+
   render() {
     const {classes, handleChange, values} = this.props;
     return (
@@ -32,7 +37,7 @@ class Slide_02 extends Component {
                      InputLabelProps={{shrink: true,}}/>
         </Paper>
 
-        <Fab variant="extended" color="white" aria-label="add" className={classes.button}>
+        <Fab className={classes.button} onClick={this.continue} variant="extended" color="white" aria-label="add">
           Siguiente
         </Fab>
       </div>

@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import {withStyles} from "@material-ui/core/styles";
-import styles from "./styles/SlidesStyle_03";
+import styles from "./styles/SlidesStyle_04";
 import Typography from "@material-ui/core/Typography";
 import Fab from "@material-ui/core/Fab";
 import Paper from "@material-ui/core/Paper";
@@ -8,15 +8,23 @@ import ToggleButton from '@material-ui/lab/ToggleButton';
 import ToggleButtonGroup from '@material-ui/lab/ToggleButtonGroup';
 
 class Slide_04 extends Component {
-  state = {
-    alignment: 'left'
+
+  continue = (e) => {
+    e.preventDefault();
+    this.props.nextStep();
   };
 
-  handleAlignment = (event, alignment) => this.setState({ alignment });
+  state = {
+    toggle_one: '',
+    toggle_two: '',
+  };
+
+  handleAlignmentOne = (event, toggle_one) => this.setState({ toggle_one });
+  handleAlignmentTwo = (event, toggle_two) => this.setState({ toggle_two });
 
   render() {
     const {classes} = this.props;
-    const { alignment } = this.state;
+    const { toggle_one, toggle_two } = this.state;
 
     return (
 
@@ -30,24 +38,45 @@ class Slide_04 extends Component {
         </Typography>
 
         <Paper className={classes.paper} elevation={2} square={false}>
-          <div className={classes.inner_container}>
-            <div className={classes.toggle_container}>
-              <ToggleButtonGroup size="medium" exclusive value={alignment} onChange={this.handleAlignment} >
-                <ToggleButton value="left" aria-label="left aligned">
-                  Hombre
-                </ToggleButton>
-                <ToggleButton value="center" aria-label="centered">
-                  Mujer
-                </ToggleButton>
-                <ToggleButton value="right" aria-label="right aligned">
-                  Otro
-                </ToggleButton>
-              </ToggleButtonGroup>
-            </div>
+
+          <div className={classes.row_container}>
+            <Typography className={classes.typo_black} variant={"h6"} component={"h6"}>
+              Género:
+            </Typography>
+
+            <ToggleButtonGroup className={classes.toggle_group} size="medium" exclusive value={toggle_one} onChange={this.handleAlignmentOne} >
+              <ToggleButton className={classes.toggle_button} key={1} value="male" >
+                Hombre
+              </ToggleButton>
+              <ToggleButton className={classes.toggle_button} key={2} value="woman" >
+                Mujer
+              </ToggleButton>
+            </ToggleButtonGroup>
+          </div>
+
+          <div className={classes.row_container}>
+            <Typography className={classes.typo_black} variant={"h6"} component={"h6"}>
+              Orientación Sexual:
+            </Typography>
+
+            <ToggleButtonGroup className={classes.toggle_group} size="medium" exclusive value={toggle_two} onChange={this.handleAlignmentTwo} >
+              <ToggleButton className={classes.toggle_button} key={1}  value="gay">
+                Gay
+              </ToggleButton>
+              <ToggleButton className={classes.toggle_button} key={2}  value="lesbian">
+                Lesbiana
+              </ToggleButton>
+              <ToggleButton className={classes.toggle_button} key={3}  value="bisexual">
+                Bisexual
+              </ToggleButton>
+              <ToggleButton className={classes.toggle_button} key={4}  value="trans">
+                Trans
+              </ToggleButton>
+            </ToggleButtonGroup>
           </div>
         </Paper>
 
-        <Fab variant="extended" color="white" aria-label="add" className={classes.button}>
+        <Fab className={classes.button} onClick={this.continue} variant="extended" color="white" aria-label="add">
           Siguiente
         </Fab>
       </div>

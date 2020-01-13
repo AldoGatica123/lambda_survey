@@ -11,46 +11,51 @@ import Slide_02 from "./Slide_02";
 import Slide_03 from "./Slide_03";
 import Slide_04 from "./Slide_04";
 import Slide_05 from "./Slide_05";
+import EndSlide from "./EndSlide";
 
 class Stepper extends Component {
 
   state = {
-    activeStep: 0,
+    step: 0,
   };
 
   handleNext = () => {
     this.setState(prevState => ({
-      activeStep: prevState.activeStep + 1,
+      step: prevState.step + 1,
     }));
   };
 
   handleBack = () => {
     this.setState(prevState => ({
-      activeStep: prevState.activeStep - 1,
+      step: prevState.step - 1,
     }));
   };
 
+  handleSubmit = () => {
+    const {step} = this.state;
+    this.setState({step: 0});
+  };
 
   render() {
     const { classes } = this.props;
-    const { activeStep } = this.state;
-    const maxSteps = 8;
+    const { step } = this.state;
+    const maxSteps = 7;
 
     return (
       <div className={classes.root}>
         <MobileStepper
           steps={maxSteps}
           position="static"
-          activeStep={activeStep}
+          activeStep={step}
           className={classes.stepper}
           nextButton={
-            <Button size="small" onClick={this.handleNext} disabled={activeStep === maxSteps - 1}>
+            <Button size="small" onClick={this.handleNext} disabled={step === maxSteps - 1}>
               Siguiente
               <KeyboardArrowRight />
             </Button>
           }
           backButton={
-            <Button size="small" onClick={this.handleBack} disabled={activeStep === 0}>
+            <Button size="small" onClick={this.handleBack} disabled={step === 0}>
               <KeyboardArrowLeft />
               Atrás
             </Button>
@@ -58,19 +63,21 @@ class Stepper extends Component {
         />
         <div className={classes.container}>
           {(() => {
-            switch (activeStep) {
+            switch (step) {
               case 0:
-                return <Slide_04/>;
+                return <Landing nextStep={this.handleNext}/>;
               case 1:
-                return <Slide_01/>;
+                return <Slide_01 nextStep={this.handleNext}/>;
               case 2:
-                return <Slide_02/>;
+                return <Slide_02 nextStep={this.handleNext}/>;
               case 3:
-                return <Slide_03/>;
+                return <Slide_03 nextStep={this.handleNext}/>;
               case 4:
-                return <Slide_04/>;
+                return <Slide_04 nextStep={this.handleNext}/>;
               case 5:
-                return <Slide_05/>;
+                return <Slide_05 nextStep={this.handleNext}/>;
+              case 6:
+                return <EndSlide submit={this.handleSubmit}/>;
               default:
                 return null;
             }

@@ -7,6 +7,11 @@ import logo from '../assets/img/lamdba_logo.png';
 
 class Landing extends Component {
 
+  continue = (e) => {
+    e.preventDefault();
+    this.props.nextStep();
+  };
+
   render() {
     const {classes} = this.props;
     return (
@@ -14,7 +19,7 @@ class Landing extends Component {
       <div className={classes.base}>
         <img className={classes.logo} src={logo} alt={logo}/>
         <Typography className={classes.typo} variant={"h4"} component={"h4"}> Encuesta de satisfacción de servicio</Typography>
-        <Fab variant="extended" color="white" aria-label="add" className={classes.button}>
+        <Fab className={classes.button} onClick={this.continue} variant="extended" color="white" aria-label="add">
           Inicia
         </Fab>
       </div>
