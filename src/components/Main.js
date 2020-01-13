@@ -39,6 +39,12 @@ class Main extends Component {
     })
   };
 
+  handleChangeResults  = name => (e, value) => {
+    this.setState({
+      results: {...this.state.profile, [name]: value},
+    });
+  };
+
   handleSubmit = () => {
     const {step} = this.state;
     this.setState({step: 0});
@@ -58,7 +64,7 @@ class Main extends Component {
       case 14:
         return <Slide_04 nextStep={this.handleNext} handleChange={this.handleChange} values={profile}/>;
       case 0:
-        return <Slide_05 nextStep={this.handleNext} handleChange={this.handleChange} values={profile}/>;
+        return <Slide_05 nextStep={this.handleNext} handleChangeResults={this.handleChangeResults} values={results}/>;
       case 6:
         return <EndSlide submit={this.handleSubmit}/>;
       default:
