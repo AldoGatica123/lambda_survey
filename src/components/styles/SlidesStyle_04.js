@@ -2,7 +2,7 @@ export default (theme) => ({
   root: {
     width: "100%",
     height: "94.5vh",
-    backgroundColor: 'teal',
+    backgroundColor: '#4AA239',
   },
   paper: {
     width: "80%",
@@ -16,7 +16,8 @@ export default (theme) => ({
     textAlign: "left",
   },
   toggle_group:{
-    width: "95%",
+    width: "100%",
+    display: "block",
   },
   toggle_button: {
     backgroundColor: "white",

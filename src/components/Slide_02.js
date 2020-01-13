@@ -15,8 +15,8 @@ class Slide_02 extends Component {
 
   render() {
     const {classes, handleChange, values} = this.props;
-    return (
 
+    return (
       <div className={classes.root}>
         <Typography className={classes.typo_white} variant={"h6"} component={"h6"}>
           Esta encuesta tiene como objetivo la obtención de una evaluación de los ususarios/as del espacio seguro que proporciona Lambda con el fin de poder mejorar los servicios, la atención y las instalaciones que nosotros ofrecemos.
@@ -33,7 +33,7 @@ class Slide_02 extends Component {
           </Typography>
 
           <TextField name="survey_date" defaultValue="2020-12-31"
-                     className={classes.datePicker} type="date" onChange={handleChange} value={values}
+                     className={classes.datePicker} type="date" onChange={handleChange} value={values.survey_date}
                      InputLabelProps={{shrink: true,}}/>
         </Paper>
 

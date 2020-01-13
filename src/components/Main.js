@@ -13,10 +13,12 @@ import Slide_04 from "./Slide_04";
 import Slide_05 from "./Slide_05";
 import EndSlide from "./EndSlide";
 
-class Stepper extends Component {
+class Main extends Component {
 
   state = {
     step: 0,
+    profile: {},
+    results: {},
   };
 
   handleNext = () => {
@@ -31,23 +33,47 @@ class Stepper extends Component {
     }));
   };
 
+  handleChange = (e) => {
+    this.setState({
+      profile: {...this.state.profile, [e.target.name]: e.target.value},
+    })
+  };
+
   handleSubmit = () => {
     const {step} = this.state;
     this.setState({step: 0});
   };
 
+
+  renderSteps = (step, profile, results) => {
+    switch (step) {
+      case 10:
+        return <Landing nextStep={this.handleNext}/>;
+      case 11:
+        return <Slide_01 nextStep={this.handleNext}/>;
+      case 1:
+        return <Slide_02 nextStep={this.handleNext} handleChange={this.handleChange} values={profile}/>;
+      case 13:
+        return <Slide_03 nextStep={this.handleNext} handleChange={this.handleChange} values={profile}/>;
+      case 14:
+        return <Slide_04 nextStep={this.handleNext} handleChange={this.handleChange} values={profile}/>;
+      case 0:
+        return <Slide_05 nextStep={this.handleNext} handleChange={this.handleChange} values={profile}/>;
+      case 6:
+        return <EndSlide submit={this.handleSubmit}/>;
+      default:
+        return null;
+    }
+  };
+
   render() {
     const { classes } = this.props;
-    const { step } = this.state;
+    const { step, profile, results } = this.state;
     const maxSteps = 7;
 
     return (
       <div className={classes.root}>
-        <MobileStepper
-          steps={maxSteps}
-          position="static"
-          activeStep={step}
-          className={classes.stepper}
+        <MobileStepper className={classes.stepper} steps={maxSteps} position="static" activeStep={step}
           nextButton={
             <Button size="small" onClick={this.handleNext} disabled={step === maxSteps - 1}>
               Siguiente
@@ -62,29 +88,10 @@ class Stepper extends Component {
           }
         />
         <div className={classes.container}>
-          {(() => {
-            switch (step) {
-              case 0:
-                return <Landing nextStep={this.handleNext}/>;
-              case 1:
-                return <Slide_01 nextStep={this.handleNext}/>;
-              case 2:
-                return <Slide_02 nextStep={this.handleNext}/>;
-              case 3:
-                return <Slide_03 nextStep={this.handleNext}/>;
-              case 4:
-                return <Slide_04 nextStep={this.handleNext}/>;
-              case 5:
-                return <Slide_05 nextStep={this.handleNext}/>;
-              case 6:
-                return <EndSlide submit={this.handleSubmit}/>;
-              default:
-                return null;
-            }
-          })()}
+          {this.renderSteps(step, profile, results)}
         </div>
       </div>
     )
   };
 }
-export default withStyles(styles)(Stepper);
+export default withStyles(styles)(Main);

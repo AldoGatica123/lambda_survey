@@ -14,8 +14,8 @@ class Slide_01 extends Component {
 
   render() {
     const {classes} = this.props;
-    return (
 
+    return (
       <div className={classes.root}>
         <Typography className={classes.title} variant={"h4"} component={"h4"}>
           ASOCIACIÓN LAMBDA LE DA LA BIENVENIDA

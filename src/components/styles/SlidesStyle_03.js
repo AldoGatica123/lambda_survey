@@ -2,7 +2,7 @@ export default (theme) => ({
   root: {
     width: "100%",
     height: "94.5vh",
-    backgroundColor: 'teal',
+    backgroundColor: '#4AA239',
   },
   paper: {
     width: "80%",
@@ -27,6 +27,9 @@ export default (theme) => ({
     marginBottom: theme.spacing.unit * 5,
     width: "50%",
     maxWidth: "600px",
+  },
+  text_field: {
+    width: "50%",
   },
   button:{
     margin: theme.spacing.unit * 3,

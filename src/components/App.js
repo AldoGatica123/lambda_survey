@@ -1,9 +1,9 @@
 import React from 'react';
-import Slider from './Stepper'
+import Main from './Main'
 function App() {
   return (
     <div className="App">
-      <Slider/>
+      <Main/>
     </div>
   );
 }

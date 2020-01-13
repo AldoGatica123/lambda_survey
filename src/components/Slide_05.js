@@ -4,7 +4,6 @@ import styles from "./styles/SlidesStyle_05";
 import Typography from "@material-ui/core/Typography";
 import Fab from "@material-ui/core/Fab";
 import Paper from "@material-ui/core/Paper";
-import Slider from "@material-ui/core/Slider"
 
 class Slide_05 extends Component {
 
@@ -47,17 +46,7 @@ class Slide_05 extends Component {
           <Typography className={classes.typo_black} variant={"h5"} component={"h5"}>
             <b>Estado de las instalaciones del espacio seguro</b>
           </Typography>
-          <Slider
-            className={classes.slider}
-            defaultValue={5}
-            getAriaValueText={valuetext}
-            aria-labelledby="discrete-slider"
-            valueLabelDisplay="auto"
-            marks={marks}
-            step={1}
-            min={1}
-            max={5}
-          />
+          <input className={classes.slider} type="range" min="1" max="5" name='slider' value={values.slider} onChange={handleChange}/>
           <Typography className={classes.typo_gray} variant={"h6"} component={"h6"}>
             <b>Deslice su dedo para indicar su calificación</b>
           </Typography>

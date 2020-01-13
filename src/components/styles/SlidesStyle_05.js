@@ -43,7 +43,7 @@ export default (theme) => ({
   slider: {
     marginTop: theme.spacing.unit * 3,
     marginBottom: theme.spacing.unit * 3,
-    width: "50%",
+    width: "100%",
     maxWidth: "600px",
   },
   button:{

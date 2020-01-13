@@ -4,8 +4,9 @@ import styles from "./styles/SlidesStyle_04";
 import Typography from "@material-ui/core/Typography";
 import Fab from "@material-ui/core/Fab";
 import Paper from "@material-ui/core/Paper";
-import ToggleButton from '@material-ui/lab/ToggleButton';
-import ToggleButtonGroup from '@material-ui/lab/ToggleButtonGroup';
+import Radio from '@material-ui/core/Radio';
+import RadioGroup from '@material-ui/core/RadioGroup';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
 
 class Slide_04 extends Component {
 
@@ -14,20 +15,10 @@ class Slide_04 extends Component {
     this.props.nextStep();
   };
 
-  state = {
-    toggle_one: '',
-    toggle_two: '',
-  };
-
-  handleAlignmentOne = (event, toggle_one) => this.setState({ toggle_one });
-  handleAlignmentTwo = (event, toggle_two) => this.setState({ toggle_two });
-
   render() {
-    const {classes} = this.props;
-    const { toggle_one, toggle_two } = this.state;
+    const { classes, handleChange, values } = this.props;
 
     return (
-
       <div className={classes.root}>
         <Typography className={classes.typo_white} variant={"h6"} component={"h6"}>
           Esta encuesta tiene como objetivo generar los mecanismos para tener evaluación del espacio seguro, del trabajo del gestor y los prestadores de servicio de la Red de Protección con el fin de mejorar los servicios pertinentes y que dentro de la atención y los servicios sean respetados los derechos humanos de las personas de interés.
@@ -44,14 +35,10 @@ class Slide_04 extends Component {
               Género:
             </Typography>
 
-            <ToggleButtonGroup className={classes.toggle_group} size="medium" exclusive value={toggle_one} onChange={this.handleAlignmentOne} >
-              <ToggleButton className={classes.toggle_button} key={1} value="male" >
-                Hombre
-              </ToggleButton>
-              <ToggleButton className={classes.toggle_button} key={2} value="woman" >
-                Mujer
-              </ToggleButton>
-            </ToggleButtonGroup>
+            <RadioGroup className={classes.toggle_group} name="gender" value={values.gender} onChange={handleChange}>
+              <FormControlLabel value="male" control={<Radio />} label="Hombre" />
+              <FormControlLabel value="female" control={<Radio />} label="Mujer" />
+            </RadioGroup>
           </div>
 
           <div className={classes.row_container}>
@@ -59,21 +46,14 @@ class Slide_04 extends Component {
               Orientación Sexual:
             </Typography>
 
-            <ToggleButtonGroup className={classes.toggle_group} size="medium" exclusive value={toggle_two} onChange={this.handleAlignmentTwo} >
-              <ToggleButton className={classes.toggle_button} key={1}  value="gay">
-                Gay
-              </ToggleButton>
-              <ToggleButton className={classes.toggle_button} key={2}  value="lesbian">
-                Lesbiana
-              </ToggleButton>
-              <ToggleButton className={classes.toggle_button} key={3}  value="bisexual">
-                Bisexual
-              </ToggleButton>
-              <ToggleButton className={classes.toggle_button} key={4}  value="trans">
-                Trans
-              </ToggleButton>
-            </ToggleButtonGroup>
+            <RadioGroup className={classes.toggle_group} name="orientation" value={values.orientation} onChange={handleChange}>
+              <FormControlLabel value="gay" control={<Radio />} label="Gay" />
+              <FormControlLabel value="lesbian" control={<Radio />} label="Lesbiana" />
+              <FormControlLabel value="bisexual" control={<Radio />} label="Bisexual" />
+              <FormControlLabel value="trans" control={<Radio />} label="Trans" />
+            </RadioGroup>
           </div>
+
         </Paper>
 
         <Fab className={classes.button} onClick={this.continue} variant="extended" color="white" aria-label="add">

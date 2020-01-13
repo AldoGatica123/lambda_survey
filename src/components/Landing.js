@@ -14,8 +14,8 @@ class Landing extends Component {
 
   render() {
     const {classes} = this.props;
-    return (
 
+    return (
       <div className={classes.base}>
         <img className={classes.logo} src={logo} alt={logo}/>
         <Typography className={classes.typo} variant={"h4"} component={"h4"}> Encuesta de satisfacción de servicio</Typography>
