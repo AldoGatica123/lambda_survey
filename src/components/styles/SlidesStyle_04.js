@@ -15,6 +15,12 @@ export default (theme) => ({
     display: "table-row",
     textAlign: "left",
   },
+  checkbox_container:{
+    width: "35%",
+    padding: theme.spacing.unit * 2,
+    textAlign: "left",
+    display: "table-cell",
+  },
   toggle_group:{
     width: "100%",
     display: "block",

@@ -12,6 +12,10 @@ import Slide_03 from "./Slide_03";
 import Slide_04 from "./Slide_04";
 import Slide_05 from "./Slide_05";
 import EndSlide from "./EndSlide";
+const axios = require('axios');
+
+// const baseURL = 'https://jh4snq3376.execute-api.us-east-1.amazonaws.com/api';
+const baseURL = 'http://localhost:8000';
 
 class Main extends Component {
 
@@ -41,29 +45,33 @@ class Main extends Component {
 
   handleChangeResults  = name => (e, value) => {
     this.setState({
-      results: {...this.state.profile, [name]: value},
+      results: {...this.state.results, [name]: value},
     });
   };
 
   handleSubmit = () => {
-    const {step} = this.state;
     this.setState({step: 0});
+    axios.post(baseURL + '/survey', { ...this.state })
+      .then(res => {
+        console.log(res);
+        console.log(res.data);
+      })
   };
 
 
   renderSteps = (step, profile, results) => {
     switch (step) {
-      case 10:
+      case 4:
         return <Landing nextStep={this.handleNext}/>;
-      case 11:
-        return <Slide_01 nextStep={this.handleNext}/>;
       case 1:
+        return <Slide_01 nextStep={this.handleNext}/>;
+      case 2:
         return <Slide_02 nextStep={this.handleNext} handleChange={this.handleChange} values={profile}/>;
-      case 13:
+      case 3:
         return <Slide_03 nextStep={this.handleNext} handleChange={this.handleChange} values={profile}/>;
-      case 14:
-        return <Slide_04 nextStep={this.handleNext} handleChange={this.handleChange} values={profile}/>;
       case 0:
+        return <Slide_04 nextStep={this.handleNext} handleChange={this.handleChange} values={profile}/>;
+      case 5:
         return <Slide_05 nextStep={this.handleNext} handleChangeResults={this.handleChangeResults} values={results}/>;
       case 6:
         return <EndSlide submit={this.handleSubmit}/>;

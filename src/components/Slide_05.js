@@ -46,19 +46,10 @@ class Slide_05 extends Component {
           <Typography className={classes.typo_black} variant={"h5"} component={"h5"}>
             <b>Estado de las instalaciones del espacio seguro</b>
           </Typography>
-          <Slider
-            className={classes.slider}
-            defaultValue={5}
-            getAriaValueText={valuetext}
-            aria-labelledby="discrete-slider"
-            valueLabelDisplay="auto"
-            marks={marks}
-            value={values.slider}
-            onChange={handleChangeResults("result_01")}
-            step={1}
-            min={1}
-            max={5}
-          />
+          <Slider className={classes.slider} value={values.slider}
+            onChange={handleChangeResults("result_01")} defaultValue={5}
+            getAriaValueText={valuetext} marks={marks} step={1} min={1} max={5}
+            aria-labelledby="discrete-slider" valueLabelDisplay="auto"/>
           <Typography className={classes.typo_gray} variant={"h6"} component={"h6"}>
             <b>Deslice su dedo para indicar su calificación</b>
           </Typography>
