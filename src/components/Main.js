@@ -142,13 +142,13 @@ class Main extends Component {
         return <Slide_05 key={4} question={this.survey_questions[4]} nextStep={this.handleNext} handleChangeResults={this.handleChangeResults} values={results}/>;
       case 210:
         return <Slide_05 key={5} question={this.survey_questions[5]} nextStep={this.handleNext} handleChangeResults={this.handleChangeResults} values={results}/>;
-      case 0:
+      case 211:
         return <Slide_05 key={6} question={this.survey_questions[6]} nextStep={this.handleNext} handleChangeResults={this.handleChangeResults} values={results}/>;
-      case 1:
+      case 212:
         return <Slide_05 key={7} question={this.survey_questions[7]} nextStep={this.handleNext} handleChangeResults={this.handleChangeResults} values={results}/>;
-      case 2:
+      case 0:
         return <Slide_06 nextStep={this.handleNext} values={results}/>;
-      case 3:
+      case 1:
         return <EndSlide submit={this.handleSubmit}/>;
       default:
         return null;
@@ -158,7 +158,7 @@ class Main extends Component {
   render() {
     const { classes } = this.props;
     const { step, profile, results } = this.state;
-    const maxSteps = 13;
+    const maxSteps = 20;
 
     return (
       <div className={classes.root}>

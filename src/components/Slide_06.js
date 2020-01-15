@@ -1,10 +1,10 @@
 import React, {Component} from "react";
 import {withStyles} from "@material-ui/core/styles";
-import styles from "./styles/SlidesStyle_05";
+import styles from "./styles/SlidesStyle_06";
 import Typography from "@material-ui/core/Typography";
 import Fab from "@material-ui/core/Fab";
 import Paper from "@material-ui/core/Paper";
-import Slider from "@material-ui/core/Slider"
+import './styles/toggleButton.css';
 
 class Slide_05 extends Component {
 
@@ -13,15 +13,29 @@ class Slide_05 extends Component {
     this.props.nextStep();
   };
 
-  render() {
-    const {classes, handleChangeResults, values, question} = this.props;
+  state = {
+    legal: false,
+    psychological: false,
+    economical: false,
+    medical: false,
+    refuge: false,
+    black: true,
+  };
 
-    function valuetext(value) {
-      return `${value}`;
-    }
+  changeColor(){
+    this.setState({
+      black: !this.state.black
+    });
+  }
+
+  render() {
+    const {classes, handleChangeResults, values} = this.props;
+
+    let btn_class = this.state.black ? "selectedButton" : "unselectedButton";
 
 
     return (
+
       <div className={classes.root}>
         <div className={classes.space}>
         </div>
@@ -33,10 +47,21 @@ class Slide_05 extends Component {
             </Typography>
           </Paper>
 
-          <Typography className={classes.typo_black} variant={"h5"} component={"h5"}>
-            <b>Whatevs</b>
-          </Typography>
-
+          <button className={btn_class} name={"legal"} value={"legal"} onClick={this.changeColor.bind(this)}>
+            LEGAL
+          </button>
+          <button className={btn_class} name={"psychological"} value={"psychological"} onClick={this.changeColor.bind(this)}>
+            PSICOLÓGICO
+          </button>
+          <button className={btn_class} name={"economical"} value={"economical"} onClick={this.changeColor.bind(this)}>
+            ECONÓMICO
+          </button>
+          <button className={btn_class} name={"medical"} value={"medical"} onClick={this.changeColor.bind(this)}>
+            MÉDICO
+          </button>
+          <button className={btn_class} name={"refuge"} value={"refuge"} onClick={this.changeColor.bind(this)}>
+            ALBERGUE
+          </button>
 
         </Paper>
 
