@@ -9,6 +9,7 @@ import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import FormGroup from '@material-ui/core/FormGroup';
+import Slide_03 from "./Slide_03";
 
 class Slide_04 extends Component {
 
@@ -18,7 +19,7 @@ class Slide_04 extends Component {
   };
 
   render() {
-    const { classes, handleChange, values } = this.props;
+    const { classes, handleChange,  handleCheckboxChange, values } = this.props;
 
     return (
       <div className={classes.root}>
@@ -59,13 +60,13 @@ class Slide_04 extends Component {
 
           <div className={classes.checkbox_container}>
             <FormControlLabel
-              control={<Checkbox  checked={values.indigenous} onChange={handleChange} value="indigenous"/>}
+              control={<Checkbox checked={values.indigenous} onChange={handleCheckboxChange('indigenous')} value="indigenous"/>}
               label="Persona indígena" labelPlacement="start"/>
           </div>
 
           <div >
             <FormControlLabel
-              control={<Checkbox checked={values.disability} onChange={handleChange} value="disability"/>}
+              control={<Checkbox checked={values.disability} onChange={handleCheckboxChange('disability')} value="disability"/>}
               label="Persona con discapacidad" labelPlacement="start"/>
           </div>
         </Paper>

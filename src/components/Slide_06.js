@@ -13,10 +13,6 @@ class Slide_05 extends Component {
     this.props.nextStep();
   };
 
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     const {classes, handleChangeResults, values, question} = this.props;
 
@@ -24,16 +20,6 @@ class Slide_05 extends Component {
       return `${value}`;
     }
 
-    const marks = [
-      {
-        value: 1,
-        label: '1',
-      },
-      {
-        value: 5,
-        label: '5',
-      },
-    ];
 
     return (
       <div className={classes.root}>
@@ -43,20 +29,15 @@ class Slide_05 extends Component {
         <Paper className={classes.paper} elevation={2} square={false}>
           <Paper className={classes.innerPaper} elevation={2} square={false}>
             <Typography className={classes.typo_gray} variant={"h5"} component={"h5"}>
-              <b>Puntee del 1 (muy malo) a 5 (muy bueno) los siguientes aspectos del espacio seguro.</b>
+              Servicio prestado en el espacio seguro
             </Typography>
           </Paper>
 
           <Typography className={classes.typo_black} variant={"h5"} component={"h5"}>
-            <b>{question.text}</b>
+            <b>Whatevs</b>
           </Typography>
-          <Slider className={classes.slider} value={values.slider}
-            onChange={handleChangeResults(question.id)}
-            getAriaValueText={valuetext} marks={marks} step={1} min={1} max={5}
-            aria-labelledby="discrete-slider" valueLabelDisplay="auto"/>
-          <Typography className={classes.typo_gray} variant={"h6"} component={"h6"}>
-            <b>Deslice su dedo para indicar su calificación</b>
-          </Typography>
+
+
         </Paper>
 
         <Fab className={classes.button} onClick={this.continue} variant="extended" color="white" aria-label="add">

@@ -14,7 +14,6 @@ class EndSlide extends Component {
   render() {
     const {classes} = this.props;
     return (
-
       <div className={classes.base}>
         <Typography className={classes.title} variant={"h2"} component={"h2"}><b>¡MUCHAS GRACIAS POR TU RETROALIMENTACIÓN!</b></Typography>
         <Typography className={classes.typo} variant={"h5"} component={"h5"}>Tus comentarios nos ayudan a mejorar nuestro servicio.</Typography>
