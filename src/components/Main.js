@@ -12,6 +12,10 @@ import Slide_03 from "./Slide_03";
 import Slide_04 from "./Slide_04";
 import Slide_05 from "./Slide_05";
 import Slide_06 from "./Slide_06";
+import Slide_07 from "./Slide_07";
+import Slide_08 from "./Slide_08";
+import Slide_09 from "./Slide_09";
+import Slide_10 from "./Slide_10";
 import EndSlide from "./EndSlide";
 const axios = require('axios');
 
@@ -120,13 +124,13 @@ class Main extends Component {
 
   renderSteps = (step, profile, results) => {
     switch (step) {
-      case 10:
+      case 20:
         return <Landing nextStep={this.handleNext}/>;
-      case 11:
+      case 21:
         return <Slide_01 nextStep={this.handleNext}/>;
-      case 12:
+      case 22:
         return <Slide_02 nextStep={this.handleNext} handleChange={this.handleChange} values={profile}/>;
-      case 13:
+      case 3:
         return <Slide_03 nextStep={this.handleNext} handleChange={this.handleChange} values={profile}/>;
       case 4:
         return <Slide_04 nextStep={this.handleNext} handleChange={this.handleChange} handleCheckboxChange={this.handleCheckboxChange} values={profile}/>;
@@ -146,10 +150,16 @@ class Main extends Component {
         return <Slide_05 key={6} question={this.survey_questions[6]} nextStep={this.handleNext} handleChangeResults={this.handleChangeResults} values={results}/>;
       case 12:
         return <Slide_05 key={7} question={this.survey_questions[7]} nextStep={this.handleNext} handleChangeResults={this.handleChangeResults} values={results}/>;
+      case 13:
+        return <Slide_06 nextStep={this.handleNext} values={results}/>;
+      case 14:
+        return <Slide_07 nextStep={this.handleNext} values={results}/>;
+      case 15:
+        return <Slide_08 nextStep={this.handleNext} values={results}/>;
+      case 16:
+        return <Slide_09 nextStep={this.handleNext} values={results}/>;
       case 0:
-        return <Slide_06 nextStep={this.handleNext} values={results}/>;
-      case 1:
-        return <Slide_06 nextStep={this.handleNext} values={results}/>;
+        return <Slide_10 nextStep={this.handleNext} values={results}/>;
       case 2:
         return <EndSlide submit={this.handleSubmit}/>;
       default:

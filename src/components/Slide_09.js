@@ -1,12 +1,12 @@
 import React, {Component} from "react";
 import {withStyles} from "@material-ui/core/styles";
-import styles from "./styles/SlidesStyle_07";
+import styles from "./styles/SlidesStyle_09";
 import Typography from "@material-ui/core/Typography";
 import Fab from "@material-ui/core/Fab";
 import Paper from "@material-ui/core/Paper";
 import TextField from '@material-ui/core/TextField';
 
-class Slide_07 extends Component {
+class Slide_09 extends Component {
 
   continue = (e) => {
     e.preventDefault();
@@ -61,7 +61,7 @@ class Slide_07 extends Component {
         <Paper className={classes.paper} elevation={2} square={false}>
           <Paper className={classes.innerPaper} elevation={2} square={false}>
             <Typography className={classes.title} variant={"h5"} component={"h5"}>
-              <b>¿Se le dió respuesta a sus necesidades?</b>
+              <b>¿Ha tenido algún problema o incidente durante su estancia en el espacio seguro?</b>
             </Typography>
           </Paper>
 
@@ -74,7 +74,7 @@ class Slide_07 extends Component {
 
 
           <Typography className={classes.typo_gray} variant={"h6"} component={"h6"}>
-            Si su respuesta fue NO, por favor indicarnos por qué
+            ¿En caso afirmativo, puede escribir el incidente o problema?
           </Typography>
 
           <TextField className={classes.text_field} id="textarea" multiline rows="2" variant="outlined"/>
@@ -89,4 +89,4 @@ class Slide_07 extends Component {
   }
 }
 
-export default withStyles(styles)(Slide_07);
+export default withStyles(styles)(Slide_09);

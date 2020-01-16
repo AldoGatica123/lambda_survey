@@ -22,6 +22,7 @@ class Slide_06 extends Component {
     borderRadius: '8px',
     fontSize: '1.5em',
     cursor: 'pointer',
+    outline: 'none',
   };
 
   state = {
