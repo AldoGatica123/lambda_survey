@@ -120,35 +120,37 @@ class Main extends Component {
 
   renderSteps = (step, profile, results) => {
     switch (step) {
-      case 20:
+      case 10:
         return <Landing nextStep={this.handleNext}/>;
-      case 21:
+      case 11:
         return <Slide_01 nextStep={this.handleNext}/>;
-      case 22:
+      case 12:
         return <Slide_02 nextStep={this.handleNext} handleChange={this.handleChange} values={profile}/>;
-      case 23:
+      case 13:
         return <Slide_03 nextStep={this.handleNext} handleChange={this.handleChange} values={profile}/>;
-      case 24:
+      case 4:
         return <Slide_04 nextStep={this.handleNext} handleChange={this.handleChange} handleCheckboxChange={this.handleCheckboxChange} values={profile}/>;
-      case 25:
+      case 5:
         return <Slide_05 key={0} question={this.survey_questions[0]} nextStep={this.handleNext} handleChangeResults={this.handleChangeResults} values={results}/>;
-      case 26:
+      case 6:
         return <Slide_05 key={1} question={this.survey_questions[1]} nextStep={this.handleNext} handleChangeResults={this.handleChangeResults} values={results}/>;
-      case 27:
+      case 7:
         return <Slide_05 key={2} question={this.survey_questions[2]} nextStep={this.handleNext} handleChangeResults={this.handleChangeResults} values={results}/>;
-      case 28:
+      case 8:
         return <Slide_05 key={3} question={this.survey_questions[3]} nextStep={this.handleNext} handleChangeResults={this.handleChangeResults} values={results}/>;
-      case 29:
+      case 9:
         return <Slide_05 key={4} question={this.survey_questions[4]} nextStep={this.handleNext} handleChangeResults={this.handleChangeResults} values={results}/>;
-      case 210:
+      case 10:
         return <Slide_05 key={5} question={this.survey_questions[5]} nextStep={this.handleNext} handleChangeResults={this.handleChangeResults} values={results}/>;
-      case 211:
+      case 11:
         return <Slide_05 key={6} question={this.survey_questions[6]} nextStep={this.handleNext} handleChangeResults={this.handleChangeResults} values={results}/>;
-      case 212:
+      case 12:
         return <Slide_05 key={7} question={this.survey_questions[7]} nextStep={this.handleNext} handleChangeResults={this.handleChangeResults} values={results}/>;
       case 0:
         return <Slide_06 nextStep={this.handleNext} values={results}/>;
       case 1:
+        return <Slide_06 nextStep={this.handleNext} values={results}/>;
+      case 2:
         return <EndSlide submit={this.handleSubmit}/>;
       default:
         return null;
@@ -158,7 +160,7 @@ class Main extends Component {
   render() {
     const { classes } = this.props;
     const { step, profile, results } = this.state;
-    const maxSteps = 20;
+    const maxSteps = 15;
 
     return (
       <div className={classes.root}>

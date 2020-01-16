@@ -2,7 +2,7 @@ export default (theme) => ({
   root: {
     width: "100%",
     height: "94.5vh",
-    backgroundColor: '#4AA239',
+    backgroundColor: '#22968c',
   },
   paper: {
     width: "80%",

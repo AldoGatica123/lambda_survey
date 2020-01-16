@@ -2,14 +2,7 @@ export default (theme) => ({
   root: {
     width: "100%",
     height: "94.5vh",
-    backgroundColor: 'teal',
-  },
-  background: {
-    minHeight: "100%",
-    height: "100%",
-    width: "100%",
-    textAlign: "center",
-    backgroundColor: 'teal',
+    backgroundColor: '#474558',
   },
   paper: {
     width: "80%",
