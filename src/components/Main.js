@@ -16,6 +16,8 @@ import Slide_07 from "./Slide_07";
 import Slide_08 from "./Slide_08";
 import Slide_09 from "./Slide_09";
 import Slide_10 from "./Slide_10";
+import Slide_11 from "./Slide_11";
+import Slide_12 from "./Slide_12";
 import EndSlide from "./EndSlide";
 const axios = require('axios');
 
@@ -124,11 +126,11 @@ class Main extends Component {
 
   renderSteps = (step, profile, results) => {
     switch (step) {
-      case 20:
+      case 0:
         return <Landing nextStep={this.handleNext}/>;
-      case 21:
+      case 1:
         return <Slide_01 nextStep={this.handleNext}/>;
-      case 22:
+      case 2:
         return <Slide_02 nextStep={this.handleNext} handleChange={this.handleChange} values={profile}/>;
       case 3:
         return <Slide_03 nextStep={this.handleNext} handleChange={this.handleChange} values={profile}/>;
@@ -158,9 +160,13 @@ class Main extends Component {
         return <Slide_08 nextStep={this.handleNext} values={results}/>;
       case 16:
         return <Slide_09 nextStep={this.handleNext} values={results}/>;
-      case 0:
+      case 17:
         return <Slide_10 nextStep={this.handleNext} values={results}/>;
-      case 2:
+      case 18:
+        return <Slide_11 nextStep={this.handleNext} values={results}/>;
+      case 19:
+        return <Slide_12 nextStep={this.handleNext} values={results}/>;
+      case 20:
         return <EndSlide submit={this.handleSubmit}/>;
       default:
         return null;
@@ -170,7 +176,7 @@ class Main extends Component {
   render() {
     const { classes } = this.props;
     const { step, profile, results } = this.state;
-    const maxSteps = 15;
+    const maxSteps = 21;
 
     return (
       <div className={classes.root}>
