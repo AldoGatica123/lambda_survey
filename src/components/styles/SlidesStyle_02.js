@@ -10,8 +10,7 @@ export default (theme) => ({
     marginRight: "auto",
   },
   title:{
-    padding: theme.spacing.unit * 10,
-    paddingBottom:  theme.spacing.unit * 5,
+    paddingTop: theme.spacing.unit * 4,
     color: 'white',
   },
   typo_white:{

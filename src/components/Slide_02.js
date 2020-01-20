@@ -18,12 +18,16 @@ class Slide_02 extends Component {
 
     return (
       <div className={classes.root}>
+        <Typography className={classes.title} variant={"h4"} component={"h4"}>
+          Evaluación de espacios públicos
+        </Typography>
+
         <Typography className={classes.typo_white} variant={"h6"} component={"h6"}>
           Esta encuesta tiene como objetivo la obtención de una evaluación de los ususarios/as del espacio seguro que proporciona Lambda con el fin de poder mejorar los servicios, la atención y las instalaciones que nosotros ofrecemos.
         </Typography>
 
         <Typography className={classes.typo_white} variant={"h6"} component={"h6"}>
-          La encuesta se hace de manera anónima. Si usted desea dejar sus datos personales, puede hacerlo al final de la encuesta indicandonos su nombre, correo electrónico o teléfono.
+          La encuesta se hace de manera anónima. Si usted desea dejar sus datos personales, puede hacerlo al final de la encuesta indicándonos su nombre, correo electrónico o teléfono.
         </Typography>
 
         <Paper className={classes.paper} elevation={2} square={false}>

@@ -17,6 +17,7 @@ export default (theme) => ({
   },
   typo_white:{
     padding: theme.spacing.unit * 4,
+    marginBottom: theme.spacing.unit * 5,
     color: 'white',
   },
   typo_black:{

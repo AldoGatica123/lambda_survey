@@ -4,6 +4,18 @@ import styles from "./styles/SlidesStyle_08";
 import Typography from "@material-ui/core/Typography";
 import Fab from "@material-ui/core/Fab";
 import Paper from "@material-ui/core/Paper";
+import Slider from "@material-ui/core/Slider";
+
+const marks = [
+  {
+    value: 1,
+    label: '1',
+  },
+  {
+    value: 5,
+    label: '5',
+  },
+];
 
 class Slide_08 extends Component {
 
@@ -60,7 +72,7 @@ class Slide_08 extends Component {
         <Paper className={classes.paper} elevation={2} square={false}>
           <Paper className={classes.innerPaper} elevation={2} square={false}>
             <Typography className={classes.title} variant={"h5"} component={"h5"}>
-              <b>¿Se le refirió con otro de la Red Nacional de Protección para cubrir necesidades?</b>
+              <b>¿Se le refirió con otro socio de la Red Nacional de Protección para cubrir necesidades?</b>
             </Typography>
           </Paper>
 
@@ -76,7 +88,10 @@ class Slide_08 extends Component {
             Si su respuesta es SI, por favor indicarnos la calidad del servicio del socio
           </Typography>
 
-
+          <Slider className={classes.slider} value={values.slider}
+                  onChange={handleChangeResults}
+                   marks={marks} step={1} min={1} max={5}
+                  aria-labelledby="discrete-slider" valueLabelDisplay="auto"/>
         </Paper>
 
         <Fab className={classes.button} onClick={this.continue} variant="extended" color="white" aria-label="add">

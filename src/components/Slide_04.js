@@ -21,12 +21,8 @@ class Slide_04 extends Component {
 
     return (
       <div className={classes.root}>
-        <Typography className={classes.typo_white} variant={"h6"} component={"h6"}>
-          Esta encuesta tiene como objetivo generar los mecanismos para tener evaluación del espacio seguro, del trabajo del gestor y los prestadores de servicio de la Red de Protección con el fin de mejorar los servicios pertinentes y que dentro de la atención y los servicios sean respetados los derechos humanos de las personas de interés.
-        </Typography>
-
-        <Typography className={classes.typo_white} variant={"h6"} component={"h6"}>
-          <b>La encuesta se hace de manera anónima.</b>
+        <Typography className={classes.typo_white} variant={"h4"} component={"h4"}>
+          Evaluación de espacios públicos
         </Typography>
 
         <Paper className={classes.paper} elevation={2} square={false}>
@@ -37,8 +33,22 @@ class Slide_04 extends Component {
             </Typography>
 
             <RadioGroup className={classes.toggle_group} name="gender" value={values.gender} onChange={handleChange}>
-              <FormControlLabel value="male" control={<Radio />} label="Hombre" />
-              <FormControlLabel value="female" control={<Radio />} label="Mujer" />
+              <FormControlLabel value="man" control={<Radio />} label="Hombre" />
+              <FormControlLabel value="woman" control={<Radio />} label="Mujer" />
+              <FormControlLabel value="trans_man" control={<Radio />} label="Hombre Transgénero" />
+              <FormControlLabel value="trans_woman" control={<Radio />} label="Mujer Transgénero" />
+            </RadioGroup>
+          </div>
+
+          <div className={classes.row_container}>
+            <Typography className={classes.typo_black} variant={"h6"} component={"h6"}>
+              Sexo:
+            </Typography>
+
+            <RadioGroup className={classes.toggle_group} name="sex" value={values.sex} onChange={handleChange}>
+              <FormControlLabel value="male" control={<Radio />} label="Masculino" />
+              <FormControlLabel value="female" control={<Radio />} label="Femenino" />
+              <FormControlLabel value="intersexual" control={<Radio />} label="Intersexual" />
             </RadioGroup>
           </div>
 
@@ -51,9 +61,8 @@ class Slide_04 extends Component {
               <FormControlLabel value="gay" control={<Radio />} label="Gay" />
               <FormControlLabel value="lesbian" control={<Radio />} label="Lesbiana" />
               <FormControlLabel value="bisexual" control={<Radio />} label="Bisexual" />
-              <FormControlLabel value="trans" control={<Radio />} label="Trans" />
+              <FormControlLabel value="straight" control={<Radio />} label="Heterosexual" />
             </RadioGroup>
-
           </div>
 
           <div className={classes.checkbox_container}>

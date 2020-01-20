@@ -27,12 +27,8 @@ class Slide_03 extends Component {
 
     return (
       <div className={classes.root}>
-        <Typography className={classes.typo_white} variant={"h6"} component={"h6"}>
-          Esta encuesta tiene como objetivo generar los mecanismos para tener evaluación del espacio seguro, del trabajo del gestor y los prestadores de servicio de la Red de Protección con el fin de mejorar los servicios pertinentes y que dentro de la atención y los servicios sean respetados los derechos humanos de las personas de interés.
-        </Typography>
-
-        <Typography className={classes.typo_white} variant={"h6"} component={"h6"}>
-          <b>La encuesta se hace de manera anónima.</b>
+        <Typography className={classes.typo_white} variant={"h4"} component={"h4"}>
+          Evaluación de espacios públicos
         </Typography>
 
         <Paper className={classes.paper} elevation={2} square={false}>

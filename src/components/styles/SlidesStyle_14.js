@@ -11,6 +11,18 @@ export default (theme) => ({
     marginTop: "auto",
     display: "table",
   },
+  space: {
+    height: "10%",
+  },
+  innerPaper: {
+    width: "105%",
+    marginLeft: theme.spacing.unit * -3,
+    marginBottom: theme.spacing.unit * 4,
+  },
+  title:{
+    padding: theme.spacing.unit * 6,
+    color: 'gray',
+  },
   row_container:{
     display: "table-row",
     textAlign: "left",
@@ -39,6 +51,10 @@ export default (theme) => ({
     display: "table-cell",
     width: "35%",
     color: 'dimgray',
+  },
+  text_field: {
+    width: "35%",
+    margin: theme.spacing.unit * 2,
   },
   button:{
     margin: theme.spacing.unit * 3,

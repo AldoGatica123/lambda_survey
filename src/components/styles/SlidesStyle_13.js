@@ -2,7 +2,7 @@ export default (theme) => ({
   root: {
     width: "100%",
     height: "94.5vh",
-    backgroundColor: '#4470c3',
+    backgroundColor: '#2700a5',
   },
   paper: {
     width: "80%",
@@ -30,18 +30,12 @@ export default (theme) => ({
     color: 'black',
   },
   typo_gray:{
-    padding: theme.spacing.unit * 3,
+    paddingTop: theme.spacing.unit * 3,
     color: 'gray',
   },
   text_field: {
     width: "80%",
     marginBottom: theme.spacing.unit * 2,
-  },
-  slider: {
-    marginTop: theme.spacing.unit * 3,
-    marginBottom: theme.spacing.unit * 3,
-    width: "100%",
-    maxWidth: "600px",
   },
   button:{
     margin: theme.spacing.unit * 3,

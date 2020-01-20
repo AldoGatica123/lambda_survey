@@ -61,7 +61,7 @@ class Slide_09 extends Component {
         <Paper className={classes.paper} elevation={2} square={false}>
           <Paper className={classes.innerPaper} elevation={2} square={false}>
             <Typography className={classes.title} variant={"h5"} component={"h5"}>
-              <b>¿Ha tenido algún problema o incidente durante su estancia en el espacio seguro?</b>
+              <b>¿Ha tenido algún problema o incidente durante su estancia en el espacio seguro ofrecido por Lambda?</b>
             </Typography>
           </Paper>
 

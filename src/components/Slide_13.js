@@ -1,12 +1,12 @@
 import React, {Component} from "react";
 import {withStyles} from "@material-ui/core/styles";
-import styles from "./styles/SlidesStyle_12";
+import styles from "./styles/SlidesStyle_13";
 import Typography from "@material-ui/core/Typography";
 import Fab from "@material-ui/core/Fab";
 import Paper from "@material-ui/core/Paper";
 import TextField from '@material-ui/core/TextField';
 
-class Slide_12 extends Component {
+class Slide_13 extends Component {
 
   continue = (e) => {
     e.preventDefault();
@@ -61,23 +61,11 @@ class Slide_12 extends Component {
         <Paper className={classes.paper} elevation={2} square={false}>
           <Paper className={classes.innerPaper} elevation={2} square={false}>
             <Typography className={classes.title} variant={"h5"} component={"h5"}>
-              <b>¿Considera que sus datos personales u otra información personal ha sido tratada de manera confidencial?</b>
+              <b>Anote sugerencias para mejorar los servicios prestados</b>
             </Typography>
           </Paper>
 
-          <button style={this.leftButton} className={yes} name={"yes"} value={"yes"} onClick={this.toggleButton.bind(this)}>
-            SI
-          </button>
-          <button style={this.rightButton} className={no} name={"no"} value={"no"} onClick={this.toggleButton.bind(this)}>
-            NO
-          </button>
-
-
-          <Typography className={classes.typo_gray} variant={"h6"} component={"h6"}>
-            Si su respuesta fue NO, por favor indicarnos por qué
-          </Typography>
-
-          <TextField className={classes.text_field} id="textarea" multiline rows="2" variant="outlined"/>
+          <TextField className={classes.text_field} placeholder={"Agradecemos sus comentarios"} id="textarea" multiline rows="6" variant="outlined"/>
 
         </Paper>
 
@@ -89,4 +77,4 @@ class Slide_12 extends Component {
   }
 }
 
-export default withStyles(styles)(Slide_12);
+export default withStyles(styles)(Slide_13);

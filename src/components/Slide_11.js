@@ -29,7 +29,7 @@ class Slide_11 extends Component {
         <Paper className={classes.paper} elevation={2} square={false}>
           <Paper className={classes.innerPaper} elevation={2} square={false}>
             <Typography className={classes.title} variant={"h5"} component={"h5"}>
-              <b>¿Cuál es su valoración global sobre el espacio seguro que ofrece lambda?</b>
+              <b>¿Cuál es su valoración global sobre el espacio seguro que ofrece Lambda?</b>
             </Typography>
           </Paper>
 

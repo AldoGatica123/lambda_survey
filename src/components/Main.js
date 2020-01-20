@@ -18,6 +18,8 @@ import Slide_09 from "./Slide_09";
 import Slide_10 from "./Slide_10";
 import Slide_11 from "./Slide_11";
 import Slide_12 from "./Slide_12";
+import Slide_13 from "./Slide_13";
+import Slide_14 from "./Slide_14";
 import EndSlide from "./EndSlide";
 const axios = require('axios');
 
@@ -33,6 +35,7 @@ class Main extends Component {
       location: '',
       age: '',
       gender: '',
+      sex: '',
       orientation: '',
       indigenous: false,
       disability: false,
@@ -56,7 +59,7 @@ class Main extends Component {
     },
     {
       id: 'q_02',
-      text: 'Estado del Alojamiento / Dormitorio',
+      text: 'Estado del alojamiento / dormitorio',
     },
     {
       id: 'q_03',
@@ -76,7 +79,7 @@ class Main extends Component {
     },
     {
       id: 'q_07',
-      text: 'Trato en general del personal hacia tu persona',
+      text: 'Trato en general del personal hacia su persona',
     },
     {
       id: 'q_08',
@@ -167,6 +170,10 @@ class Main extends Component {
       case 19:
         return <Slide_12 nextStep={this.handleNext} values={results}/>;
       case 20:
+        return <Slide_13 nextStep={this.handleNext} values={results}/>;
+      case 21:
+        return <Slide_14 nextStep={this.handleNext} values={results}/>;
+      case 22:
         return <EndSlide submit={this.handleSubmit}/>;
       default:
         return null;
@@ -176,7 +183,7 @@ class Main extends Component {
   render() {
     const { classes } = this.props;
     const { step, profile, results } = this.state;
-    const maxSteps = 21;
+    const maxSteps = 23;
 
     return (
       <div className={classes.root}>
