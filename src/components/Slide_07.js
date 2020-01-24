@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import {withStyles} from "@material-ui/core/styles";
-import styles from "./styles/SlidesStyle_07";
+import styles from "./styles/SlidesStyle";
 import Typography from "@material-ui/core/Typography";
 import Fab from "@material-ui/core/Fab";
 import Paper from "@material-ui/core/Paper";
@@ -54,13 +54,13 @@ class Slide_07 extends Component {
 
     return (
 
-      <div className={classes.root}>
+      <div className={classes.orangeRoot}>
         <div className={classes.space}>
         </div>
 
-        <Paper className={classes.paper} elevation={2} square={false}>
-          <Paper className={classes.innerPaper} elevation={2} square={false}>
-            <Typography className={classes.title} variant={"h5"} component={"h5"}>
+        <Paper className={classes.paperS2} elevation={2} square={false}>
+          <Paper className={classes.paperTitle} elevation={2} square={false}>
+            <Typography className={classes.grayTitle} variant={"h5"} component={"h5"}>
               <b>¿Se le dió respuesta a sus necesidades?</b>
             </Typography>
           </Paper>
@@ -73,15 +73,15 @@ class Slide_07 extends Component {
           </button>
 
 
-          <Typography className={classes.typo_gray} variant={"h6"} component={"h6"}>
+          <Typography className={classes.grayTypo} variant={"h6"} component={"h6"}>
             Si su respuesta fue NO, por favor indicarnos por qué
           </Typography>
 
-          <TextField className={classes.text_field} id="textarea" multiline rows="2" variant="outlined"/>
+          <TextField className={classes.textFieldS7} id="textarea" multiline rows="2" variant="outlined"/>
 
         </Paper>
 
-        <Fab className={classes.button} onClick={this.continue} variant="extended" color="white" aria-label="add">
+        <Fab className={classes.fabButton} onClick={this.continue} variant="extended" color="white" aria-label="add">
           Siguiente
         </Fab>
       </div>

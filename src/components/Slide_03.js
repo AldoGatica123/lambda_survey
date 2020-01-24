@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import {withStyles} from "@material-ui/core/styles";
-import styles from "./styles/SlidesStyle_03";
+import styles from "./styles/SlidesStyle";
 import Typography from "@material-ui/core/Typography";
 import Fab from "@material-ui/core/Fab";
 import Paper from "@material-ui/core/Paper";
@@ -26,14 +26,14 @@ class Slide_03 extends Component {
     const {classes, handleChange, values} = this.props;
 
     return (
-      <div className={classes.root}>
-        <Typography className={classes.typo_white} variant={"h4"} component={"h4"}>
+      <div className={classes.greenRoot}>
+        <Typography className={classes.whiteTypo} variant={"h4"} component={"h4"}>
           Evaluación de espacios públicos
         </Typography>
 
-        <Paper className={classes.paper} elevation={2} square={false}>
-          <div className={classes.inner_container}>
-            <Typography className={classes.typo_black} variant={"h6"} component={"h6"}>
+        <Paper className={classes.paperS3} elevation={2} square={false}>
+          <div className={classes.containerS3}>
+            <Typography className={classes.blackTypo} variant={"h6"} component={"h6"}>
               Lugar donde fue atendido:
             </Typography>
             <Select className={classes.selectEmpty} value={values.location} onChange={handleChange}
@@ -46,16 +46,16 @@ class Slide_03 extends Component {
             </Select>
           </div>
 
-          <div className={classes.inner_container}>
-            <Typography className={classes.typo_black} variant={"h6"} component={"h6"}>
+          <div className={classes.containerS3}>
+            <Typography className={classes.blackTypo} variant={"h6"} component={"h6"}>
               Su edad:
             </Typography>
-            <TextField className={classes.text_field} name="age" type="number"
+            <TextField className={classes.textFieldS3} name="age" type="number"
                        onChange={handleChange} value={values.age}/>
           </div>
         </Paper>
 
-        <Fab className={classes.button} onClick={this.continue} variant="extended" color="white" aria-label="add">
+        <Fab className={classes.fabButton} onClick={this.continue} variant="extended" aria-label="add">
           Siguiente
         </Fab>
       </div>

@@ -129,9 +129,9 @@ class Main extends Component {
 
   renderSteps = (step, profile, results) => {
     switch (step) {
-      case 0:
+      case 30:
         return <Landing nextStep={this.handleNext}/>;
-      case 1:
+      case 31:
         return <Slide_01 nextStep={this.handleNext}/>;
       case 2:
         return <Slide_02 nextStep={this.handleNext} handleChange={this.handleChange} values={profile}/>;
@@ -159,9 +159,9 @@ class Main extends Component {
         return <Slide_06 nextStep={this.handleNext} values={results}/>;
       case 14:
         return <Slide_07 nextStep={this.handleNext} values={results}/>;
-      case 15:
+      case 0:
         return <Slide_08 nextStep={this.handleNext} values={results}/>;
-      case 16:
+      case 1:
         return <Slide_09 nextStep={this.handleNext} values={results}/>;
       case 17:
         return <Slide_10 nextStep={this.handleNext} values={results}/>;

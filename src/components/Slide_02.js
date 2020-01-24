@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import {withStyles} from "@material-ui/core/styles";
-import styles from "./styles/SlidesStyle_02";
+import styles from "./styles/SlidesStyle";
 import Typography from "@material-ui/core/Typography";
 import Fab from "@material-ui/core/Fab";
 import Paper from "@material-ui/core/Paper";
@@ -17,22 +17,22 @@ class Slide_02 extends Component {
     const {classes, handleChange, values} = this.props;
 
     return (
-      <div className={classes.root}>
-        <Typography className={classes.title} variant={"h4"} component={"h4"}>
+      <div className={classes.greenRoot}>
+        <Typography className={classes.whiteTitle} variant={"h4"} component={"h4"}>
           Evaluación de espacios públicos
         </Typography>
 
-        <Typography className={classes.typo_white} variant={"h6"} component={"h6"}>
+        <Typography className={classes.whiteTypo} variant={"h6"} component={"h6"}>
           Esta encuesta tiene como objetivo la obtención de una evaluación de los ususarios/as del espacio seguro que proporciona Lambda con el fin de poder mejorar los servicios, la atención y las instalaciones que nosotros ofrecemos.
         </Typography>
 
-        <Typography className={classes.typo_white} variant={"h6"} component={"h6"}>
+        <Typography className={classes.whiteTypo} variant={"h6"} component={"h6"}>
           La encuesta se hace de manera anónima. Si usted desea dejar sus datos personales, puede hacerlo al final de la encuesta indicándonos su nombre, correo electrónico o teléfono.
         </Typography>
 
-        <Paper className={classes.paper} elevation={2} square={false}>
+        <Paper className={classes.paperS2} elevation={2} square={false}>
 
-          <Typography className={classes.typo_black} variant={"h6"} component={"h6"}>
+          <Typography className={classes.blackTypo} variant={"h6"} component={"h6"}>
             Fecha de la encuesta:
           </Typography>
 
@@ -41,7 +41,7 @@ class Slide_02 extends Component {
                      InputLabelProps={{shrink: true,}}/>
         </Paper>
 
-        <Fab className={classes.button} onClick={this.continue} variant="extended" color="white" aria-label="add">
+        <Fab className={classes.fabButton} onClick={this.continue} variant="extended" aria-label="add">
           Siguiente
         </Fab>
       </div>
