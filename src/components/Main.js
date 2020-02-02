@@ -1,10 +1,8 @@
 import React, {Component} from 'react';
 import {withStyles} from '@material-ui/core/styles';
-import MobileStepper from '@material-ui/core/MobileStepper';
-import styles from "./styles/StepperStyle";
-import Button from '@material-ui/core/Button';
-import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft';
-import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
+import { MobileStepper,  Button }  from '@material-ui/core';
+import styles from "./styles/SlidesStyle";
+import { KeyboardArrowLeft, KeyboardArrowRight } from '@material-ui/icons';
 import Landing from './Landing'
 import Slide_01 from "./Slide_01";
 import Slide_02 from "./Slide_02";
@@ -21,7 +19,7 @@ import Slide_12 from "./Slide_12";
 import Slide_13 from "./Slide_13";
 import Slide_14 from "./Slide_14";
 import EndSlide from "./EndSlide";
-const axios = require('axios');
+import axios from "axios";
 
 // const baseURL = 'https://jh4snq3376.execute-api.us-east-1.amazonaws.com/api';
 const baseURL = 'http://localhost:8000';
@@ -53,38 +51,22 @@ class Main extends Component {
   };
 
   survey_questions = [
-    {
-      id: 'q_01',
-      text: 'Estado de las instalaciones del espacio seguro',
-    },
-    {
-      id: 'q_02',
-      text: 'Estado del alojamiento / dormitorio',
-    },
-    {
-      id: 'q_03',
-      text: 'Calidad de actividades realizadas',
-    },
-    {
-      id: 'q_04',
-      text: 'Profesionalismo del personal de atención',
-    },
-    {
-      id: 'q_05',
-      text: 'Calidad de los alimentos recibidos',
-    },
-    {
-      id: 'q_06',
-      text: 'Limpieza de las instalaciones',
-    },
-    {
-      id: 'q_07',
-      text: 'Trato en general del personal hacia su persona',
-    },
-    {
-      id: 'q_08',
-      text: 'Calidad de la información que se le brindó',
-    },
+    { id: 'q_01',
+      text: 'Estado de las instalaciones del espacio seguro', },
+    { id: 'q_02',
+      text: 'Estado del alojamiento / dormitorio', },
+    { id: 'q_03',
+      text: 'Calidad de actividades realizadas', },
+    { id: 'q_04',
+      text: 'Profesionalismo del personal de atención', },
+    { id: 'q_05',
+      text: 'Calidad de los alimentos recibidos', },
+    { id: 'q_06',
+      text: 'Limpieza de las instalaciones', },
+    { id: 'q_07',
+      text: 'Trato en general del personal hacia su persona', },
+    { id: 'q_08',
+      text: 'Calidad de la información que se le brindó', },
   ];
 
   handleNext = () => {
@@ -129,9 +111,9 @@ class Main extends Component {
 
   renderSteps = (step, profile, results) => {
     switch (step) {
-      case 30:
+      case 0:
         return <Landing nextStep={this.handleNext}/>;
-      case 31:
+      case 1:
         return <Slide_01 nextStep={this.handleNext}/>;
       case 2:
         return <Slide_02 nextStep={this.handleNext} handleChange={this.handleChange} values={profile}/>;
@@ -159,9 +141,9 @@ class Main extends Component {
         return <Slide_06 nextStep={this.handleNext} values={results}/>;
       case 14:
         return <Slide_07 nextStep={this.handleNext} values={results}/>;
-      case 0:
+      case 15:
         return <Slide_08 nextStep={this.handleNext} values={results}/>;
-      case 1:
+      case 16:
         return <Slide_09 nextStep={this.handleNext} values={results}/>;
       case 17:
         return <Slide_10 nextStep={this.handleNext} values={results}/>;
@@ -186,7 +168,7 @@ class Main extends Component {
     const maxSteps = 23;
 
     return (
-      <div className={classes.root}>
+      <div className={classes.containerS3}>
         <MobileStepper className={classes.stepper} steps={maxSteps} position="static" activeStep={step}
           nextButton={
             <Button size="small" onClick={this.handleNext} disabled={step === maxSteps - 1}>
@@ -201,7 +183,7 @@ class Main extends Component {
             </Button>
           }
         />
-        <div className={classes.container}>
+        <div className={classes.containerS3}>
           {this.renderSteps(step, profile, results)}
         </div>
       </div>

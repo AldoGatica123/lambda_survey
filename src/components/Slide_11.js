@@ -1,10 +1,9 @@
 import React, {Component} from "react";
 import {withStyles} from "@material-ui/core/styles";
-import styles from "./styles/SlidesStyle_11";
+import styles from "./styles/SlidesStyle";
 import Typography from "@material-ui/core/Typography";
 import Fab from "@material-ui/core/Fab";
 import Paper from "@material-ui/core/Paper";
-import TextField from "@material-ui/core/TextField";
 import './styles/toggleButton.css';
 import RadioGroup from "@material-ui/core/RadioGroup";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
@@ -22,19 +21,18 @@ class Slide_11 extends Component {
 
     return (
 
-      <div className={classes.root}>
-        <div className={classes.space}>
-        </div>
+      <div className={classes.greenRoot}>
+        <div className={classes.space}/>
 
-        <Paper className={classes.paper} elevation={2} square={false}>
-          <Paper className={classes.innerPaper} elevation={2} square={false}>
-            <Typography className={classes.title} variant={"h5"} component={"h5"}>
+        <Paper className={classes.paperS2} elevation={2} square={false}>
+          <Paper className={classes.paperTitle} elevation={2} square={false}>
+            <Typography className={classes.grayTitle} variant={"h5"} component={"h5"}>
               <b>¿Cuál es su valoración global sobre el espacio seguro que ofrece Lambda?</b>
             </Typography>
           </Paper>
 
-          <div className={classes.row_container}>
-            <RadioGroup className={classes.toggle_group} name="orientation" value={values.service} onChange={handleChangeResults}>
+          <div className={classes.containerS11}>
+            <RadioGroup className={classes.containerToggleS11} name="orientation" value={values.service} onChange={handleChangeResults}>
               <FormControlLabel value="very_good" control={<Radio />} label="Muy Buena" />
               <FormControlLabel value="good" control={<Radio />} label="Buena" />
               <FormControlLabel value="regular" control={<Radio />} label="Regular" />
@@ -45,7 +43,7 @@ class Slide_11 extends Component {
 
         </Paper>
 
-        <Fab className={classes.button} onClick={this.continue} variant="extended" color="white" aria-label="add">
+        <Fab className={classes.fabButton} onClick={this.continue} variant="extended" color="white" aria-label="add">
           Siguiente
         </Fab>
       </div>

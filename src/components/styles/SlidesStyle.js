@@ -30,6 +30,16 @@ export default (theme) => ({
     height: "94.5vh",
     backgroundColor: '#bf855f',
   },
+  blueRoot: {
+    width: "100%",
+    height: "94.5vh",
+    backgroundColor: '#4470c3',
+  },
+  goldRoot: {
+    width: "100%",
+    height: "94.5vh",
+    backgroundColor: '#8e851d',
+  },
 
   //Containers
   paperS1: {
@@ -76,9 +86,19 @@ export default (theme) => ({
     height: "100vh",
     width: "100%",
   },
+  containerS11:{
+    display: "flex",
+    textAlign: "center",
+  },
   containerToggle:{
     width: "100%",
     display: "block",
+  },
+  containerToggleS11:{
+    display: "block",
+    marginTop: theme.spacing.unit * 4,
+    marginBottom: theme.spacing.unit * 6,
+    width: "100%",
   },
   containerCheckbox:{
     width: "35%",
@@ -121,6 +141,10 @@ export default (theme) => ({
     width: "35%",
     color: 'dimgray',
   },
+  whiteTitleEnding:{
+    paddingTop: theme.spacing.unit * 20,
+    color: 'white',
+  },
 
   //Widgets
   fabButton:{
@@ -140,6 +164,10 @@ export default (theme) => ({
   },
   textFieldS3: {
     width: "50%",
+  },
+  textFieldS14: {
+    width: "35%",
+    margin: theme.spacing.unit * 2,
   },
   textFieldS7: {
     width: "80%",

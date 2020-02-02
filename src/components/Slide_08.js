@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import {withStyles} from "@material-ui/core/styles";
-import styles from "./styles/SlidesStyle_08";
+import styles from "./styles/SlidesStyle";
 import Typography from "@material-ui/core/Typography";
 import Fab from "@material-ui/core/Fab";
 import Paper from "@material-ui/core/Paper";
@@ -65,13 +65,12 @@ class Slide_08 extends Component {
 
     return (
 
-      <div className={classes.root}>
-        <div className={classes.space}>
-        </div>
+      <div className={classes.blueRoot}>
+        <div className={classes.space}/>
 
-        <Paper className={classes.paper} elevation={2} square={false}>
-          <Paper className={classes.innerPaper} elevation={2} square={false}>
-            <Typography className={classes.title} variant={"h5"} component={"h5"}>
+        <Paper className={classes.paperS2} elevation={2} square={false}>
+          <Paper className={classes.paperTitle} elevation={2} square={false}>
+            <Typography className={classes.grayTitle} variant={"h5"} component={"h5"}>
               <b>¿Se le refirió con otro socio de la Red Nacional de Protección para cubrir necesidades?</b>
             </Typography>
           </Paper>
@@ -84,7 +83,7 @@ class Slide_08 extends Component {
           </button>
 
 
-          <Typography className={classes.typo_gray} variant={"h6"} component={"h6"}>
+          <Typography className={classes.grayTypo} variant={"h6"} component={"h6"}>
             Si su respuesta es SI, por favor indicarnos la calidad del servicio del socio
           </Typography>
 
@@ -94,7 +93,7 @@ class Slide_08 extends Component {
                   aria-labelledby="discrete-slider" valueLabelDisplay="auto"/>
         </Paper>
 
-        <Fab className={classes.button} onClick={this.continue} variant="extended" color="white" aria-label="add">
+        <Fab className={classes.fabButton} onClick={this.continue} variant="extended" color="white" aria-label="add">
           Siguiente
         </Fab>
       </div>

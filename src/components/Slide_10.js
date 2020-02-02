@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import {withStyles} from "@material-ui/core/styles";
-import styles from "./styles/SlidesStyle_10";
+import styles from "./styles/SlidesStyle";
 import Typography from "@material-ui/core/Typography";
 import Fab from "@material-ui/core/Fab";
 import Paper from "@material-ui/core/Paper";
@@ -71,13 +71,12 @@ class Slide_10 extends Component {
 
     return (
 
-      <div className={classes.root}>
-        <div className={classes.space}>
-        </div>
+      <div className={classes.greenRoot}>
+        <div className={classes.space}/>
 
-        <Paper className={classes.paper} elevation={2} square={false}>
-          <Paper className={classes.innerPaper} elevation={2} square={false}>
-            <Typography className={classes.title} variant={"h5"} component={"h5"}>
+        <Paper className={classes.paperS2} elevation={2} square={false}>
+          <Paper className={classes.paperTitle} elevation={2} square={false}>
+            <Typography className={classes.grayTitle} variant={"h5"} component={"h5"}>
               <b>¿Cómo conoció del espacio seguro?</b>
             </Typography>
           </Paper>
@@ -98,11 +97,11 @@ class Slide_10 extends Component {
             <br/>REFERIDO
           </button>
           <div>
-            <TextField className={classes.text_field}  id="standard-basic" label="Otros:"/>
+            <TextField className={classes.textFieldS7}  id="standard-basic" label="Otros:"/>
           </div>
         </Paper>
 
-        <Fab className={classes.button} onClick={this.continue} variant="extended" color="white" aria-label="add">
+        <Fab className={classes.fabButton} onClick={this.continue} variant="extended" color="white" aria-label="add">
           Siguiente
         </Fab>
       </div>

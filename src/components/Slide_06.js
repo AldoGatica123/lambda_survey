@@ -71,8 +71,7 @@ class Slide_06 extends Component {
     return (
 
       <div className={classes.purpleRoot}>
-        <div className={classes.space}>
-        </div>
+        <div className={classes.space}/>
 
         <Paper className={classes.paperS2} elevation={2} square={false}>
           <Paper className={classes.paperTitle} elevation={2} square={false}>
