@@ -3,6 +3,7 @@ import {withStyles} from '@material-ui/core/styles';
 import { MobileStepper,  Button }  from '@material-ui/core';
 import styles from "./styles/SlidesStyle";
 import { KeyboardArrowLeft, KeyboardArrowRight } from '@material-ui/icons';
+import axios from "axios";
 import utils from '../utils'
 import Landing from './Landing'
 import Slide_01 from "./Slide_01";
@@ -20,7 +21,6 @@ import Slide_12 from "./Slide_12";
 import Slide_13 from "./Slide_13";
 import Slide_14 from "./Slide_14";
 import EndSlide from "./EndSlide";
-import axios from "axios";
 
 // const baseURL = 'https://jh4snq3376.execute-api.us-east-1.amazonaws.com/api';
 const baseURL = 'http://localhost:8000';
@@ -81,15 +81,15 @@ class Main extends Component {
 
   renderSteps = (step, profile, results) => {
     switch (step) {
-      case 0:
+      case 40:
         return <Landing nextStep={this.handleNext}/>;
-      case 1:
+      case 41:
         return <Slide_01 nextStep={this.handleNext}/>;
-      case 2:
+      case 0:
         return <Slide_02 nextStep={this.handleNext} handleChange={this.handleChange} values={profile}/>;
-      case 3:
+      case 1:
         return <Slide_03 nextStep={this.handleNext} handleChange={this.handleChange} values={profile}/>;
-      case 4:
+      case 2:
         return <Slide_04 nextStep={this.handleNext} handleChange={this.handleChange} handleCheckboxChange={this.handleCheckboxChange} values={profile}/>;
       case 5:
         return <Slide_05 key={0} question={this.survey_questions[0]} nextStep={this.handleNext} handleChangeResults={this.handleChangeResults} values={results}/>;
