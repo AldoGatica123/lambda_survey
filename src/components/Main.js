@@ -3,6 +3,7 @@ import {withStyles} from '@material-ui/core/styles';
 import { MobileStepper,  Button }  from '@material-ui/core';
 import styles from "./styles/SlidesStyle";
 import { KeyboardArrowLeft, KeyboardArrowRight } from '@material-ui/icons';
+import utils from '../utils'
 import Landing from './Landing'
 import Slide_01 from "./Slide_01";
 import Slide_02 from "./Slide_02";
@@ -24,50 +25,19 @@ import axios from "axios";
 // const baseURL = 'https://jh4snq3376.execute-api.us-east-1.amazonaws.com/api';
 const baseURL = 'http://localhost:8000';
 
+let profile = utils.profile;
+let results = utils.results;
+const questions = utils.survey_questions;
+
 class Main extends Component {
 
   state = {
     step: 0,
-    profile: {
-      survey_date: '',
-      location: '',
-      age: '',
-      gender: '',
-      sex: '',
-      orientation: '',
-      indigenous: false,
-      disability: false,
-    },
-    results: {
-      q_01: 1,
-      q_02: 1,
-      q_03: 1,
-      q_04: 1,
-      q_05: 1,
-      q_06: 1,
-      q_07: 1,
-      q_08: 1,
-    },
+    profile,
+    results,
   };
 
-  survey_questions = [
-    { id: 'q_01',
-      text: 'Estado de las instalaciones del espacio seguro', },
-    { id: 'q_02',
-      text: 'Estado del alojamiento / dormitorio', },
-    { id: 'q_03',
-      text: 'Calidad de actividades realizadas', },
-    { id: 'q_04',
-      text: 'Profesionalismo del personal de atención', },
-    { id: 'q_05',
-      text: 'Calidad de los alimentos recibidos', },
-    { id: 'q_06',
-      text: 'Limpieza de las instalaciones', },
-    { id: 'q_07',
-      text: 'Trato en general del personal hacia su persona', },
-    { id: 'q_08',
-      text: 'Calidad de la información que se le brindó', },
-  ];
+  survey_questions = questions;
 
   handleNext = () => {
     this.setState(prevState => ({
