@@ -4,13 +4,10 @@ import { MobileStepper,  Button }  from '@material-ui/core';
 import styles from "./styles/SlidesStyle";
 import { KeyboardArrowLeft, KeyboardArrowRight } from '@material-ui/icons';
 import axios from "axios";
-import utils from '../utils'
-import Landing from './Landing'
-import Slide_01 from "./Slide_01";
-import Slide_02 from "./Slide_02";
-import Slide_03 from "./Slide_03";
-import Slide_04 from "./Slide_04";
-import Slide_05 from "./Slide_05";
+import {utils, isProfileIncomplete} from '../utils'
+import {Intro, SLIDE_01} from './Intro'
+import {SLIDE_02, SLIDE_03, SLIDE_04} from "./Profile_Slides";
+import SLIDE_05 from "./Slide_05";
 import Slide_06 from "./Slide_06";
 import Slide_07 from "./Slide_07";
 import Slide_08 from "./Slide_08";
@@ -79,34 +76,35 @@ class Main extends Component {
   };
 
 
-  renderSteps = (step, profile, results) => {
+  renderSteps = (step, profile, results, style) => {
     switch (step) {
       case 40:
-        return <Landing nextStep={this.handleNext}/>;
+        return <Intro style={style} nextStep={this.handleNext}/>;
       case 41:
-        return <Slide_01 nextStep={this.handleNext}/>;
+        return <SLIDE_01 style={style} nextStep={this.handleNext}/>;
+      case 42:
+        return <SLIDE_02 style={style} nextStep={this.handleNext} handleChange={this.handleChange} values={profile}/>;
+      case 43:
+        return <SLIDE_03 style={style} nextStep={this.handleNext} handleChange={this.handleChange} values={profile}/>;
+      case 44:
+        return <SLIDE_04 style={style} nextStep={this.handleNext} handleChange={this.handleChange}
+                         handleCheckboxChange={this.handleCheckboxChange} values={profile} disabled={(step === 4 && isProfileIncomplete(profile))}/>;
       case 0:
-        return <Slide_02 nextStep={this.handleNext} handleChange={this.handleChange} values={profile}/>;
+        return <SLIDE_05 key={0} question={this.survey_questions[0]} nextStep={this.handleNext} handleChangeResults={this.handleChangeResults} values={results}/>;
       case 1:
-        return <Slide_03 nextStep={this.handleNext} handleChange={this.handleChange} values={profile}/>;
+        return <SLIDE_05 key={1} question={this.survey_questions[1]} nextStep={this.handleNext} handleChangeResults={this.handleChangeResults} values={results}/>;
       case 2:
-        return <Slide_04 nextStep={this.handleNext} handleChange={this.handleChange} handleCheckboxChange={this.handleCheckboxChange} values={profile}/>;
-      case 5:
-        return <Slide_05 key={0} question={this.survey_questions[0]} nextStep={this.handleNext} handleChangeResults={this.handleChangeResults} values={results}/>;
-      case 6:
-        return <Slide_05 key={1} question={this.survey_questions[1]} nextStep={this.handleNext} handleChangeResults={this.handleChangeResults} values={results}/>;
-      case 7:
-        return <Slide_05 key={2} question={this.survey_questions[2]} nextStep={this.handleNext} handleChangeResults={this.handleChangeResults} values={results}/>;
+        return <SLIDE_05 key={2} question={this.survey_questions[2]} nextStep={this.handleNext} handleChangeResults={this.handleChangeResults} values={results}/>;
       case 8:
-        return <Slide_05 key={3} question={this.survey_questions[3]} nextStep={this.handleNext} handleChangeResults={this.handleChangeResults} values={results}/>;
+        return <SLIDE_05 key={3} question={this.survey_questions[3]} nextStep={this.handleNext} handleChangeResults={this.handleChangeResults} values={results}/>;
       case 9:
-        return <Slide_05 key={4} question={this.survey_questions[4]} nextStep={this.handleNext} handleChangeResults={this.handleChangeResults} values={results}/>;
+        return <SLIDE_05 key={4} question={this.survey_questions[4]} nextStep={this.handleNext} handleChangeResults={this.handleChangeResults} values={results}/>;
       case 10:
-        return <Slide_05 key={5} question={this.survey_questions[5]} nextStep={this.handleNext} handleChangeResults={this.handleChangeResults} values={results}/>;
+        return <SLIDE_05 key={5} question={this.survey_questions[5]} nextStep={this.handleNext} handleChangeResults={this.handleChangeResults} values={results}/>;
       case 11:
-        return <Slide_05 key={6} question={this.survey_questions[6]} nextStep={this.handleNext} handleChangeResults={this.handleChangeResults} values={results}/>;
+        return <SLIDE_05 key={6} question={this.survey_questions[6]} nextStep={this.handleNext} handleChangeResults={this.handleChangeResults} values={results}/>;
       case 12:
-        return <Slide_05 key={7} question={this.survey_questions[7]} nextStep={this.handleNext} handleChangeResults={this.handleChangeResults} values={results}/>;
+        return <SLIDE_05 key={7} question={this.survey_questions[7]} nextStep={this.handleNext} handleChangeResults={this.handleChangeResults} values={results}/>;
       case 13:
         return <Slide_06 nextStep={this.handleNext} values={results}/>;
       case 14:
@@ -141,7 +139,7 @@ class Main extends Component {
       <div className={classes.containerS3}>
         <MobileStepper className={classes.stepper} steps={maxSteps} position="static" activeStep={step}
           nextButton={
-            <Button size="small" onClick={this.handleNext} disabled={step === maxSteps - 1}>
+            <Button size="small" onClick={this.handleNext} disabled={step === maxSteps - 1 || (step === 4 && isProfileIncomplete(profile))}>
               Siguiente
               <KeyboardArrowRight />
             </Button>
@@ -154,7 +152,7 @@ class Main extends Component {
           }
         />
         <div className={classes.containerS3}>
-          {this.renderSteps(step, profile, results)}
+          {this.renderSteps(step, profile, results, classes)}
         </div>
       </div>
     )

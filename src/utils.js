@@ -1,5 +1,5 @@
 
-module.exports = {
+let utils= {
   profile:{
     survey_date: '',
     location: '',
@@ -67,7 +67,13 @@ module.exports = {
 };
 
 
+function isProfileIncomplete(profile){
+  return !(profile.survey_date && profile.location && profile.age &&
+    profile.gender && profile.sex && profile.orientation);
+
+}
 
 
 
 
+export {utils, isProfileIncomplete};
