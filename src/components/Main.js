@@ -106,8 +106,8 @@ class Main extends Component {
       case 112:
         return <SLIDE_05 key={7} question={this.survey_questions[7]} nextStep={this.handleNext} handleChangeResults={this.handleChangeResults} values={results}/>;
       case 0:
-        return <SLIDE_06/>;
-      case 14:
+        return <SLIDE_06 style={style}/>;
+      case 1:
         return <Slide_07 nextStep={this.handleNext} values={results}/>;
       case 15:
         return <Slide_08 nextStep={this.handleNext} values={results}/>;

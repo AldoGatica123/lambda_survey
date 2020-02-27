@@ -52,6 +52,7 @@ class Slide_07 extends Component {
     let yes = this.state.yes ? "selectedButton" : "unselectedButton";
     let no = this.state.no ? "selectedButton" : "unselectedButton";
 
+    console.log(classes.orangeRoot)
     return (
 
       <div className={classes.orangeRoot}>

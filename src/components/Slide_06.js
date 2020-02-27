@@ -4,7 +4,6 @@ import styles from "./styles/SlidesStyle";
 import Typography from "@material-ui/core/Typography";
 import Fab from "@material-ui/core/Fab";
 import Paper from "@material-ui/core/Paper";
-import './styles/toggleButton.css';
 
 class Slide_06 extends Component {
 

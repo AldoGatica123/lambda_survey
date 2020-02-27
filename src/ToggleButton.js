@@ -1,41 +1,33 @@
 import React, {useState} from "react";
-import './components/styles/toggleButton.css';
 
 
 const SLIDE_06 = (props) => {
-	const [active1, setActive1] = useState(false);
-	const [active2, setActive2] = useState(false);
-	const toggleButton1 = () => setActive1(!active1);
-	const toggleButton2 = () => setActive2(!active2);
+	const {style} = props;
+	
+	const initialVal = [{ id: "aldo", active: false}, { id: "roberto", active: false}]
+	const [buttonArray, setData] = useState(initialVal);
+
+	// const toggleButton = () => setData(data[0].name = "qwer");
+	const activation = (index) => {}
+
+	const buttons = buttonArray.map( (button, index) => 
+		<ToggleButton key={index} style={style} values={button} toggleClick={null}/>
+	)
 
 	return(
-		<div>
-			<ToggleButton values={{name: "legal", active:active1}} toggleClick={toggleButton1}/>
-			<ToggleButton values={{name: "economico", active:active2}} toggleClick={toggleButton2}/>
+		<div className={style.containerS11}>
+			{buttons}
 		</div>
 	)
 };
 
-
-const buttonStyle = {
-	minWidth: '120px',
-	height: '200px',
-	margin: '8px',
-	paddingLeft: '8px',
-	paddingRight: '8px',
-	borderRadius: '8px',
-	fontSize: '1.5em',
-	cursor: 'pointer',
-	outline: 'none',
-};
-
 const ToggleButton = (props) => {
-	const {values, toggleClick} = props;
-
+	const {style, values, toggleClick} = props;
+	let activeStyle = values.active ? style.inactiveToggleButton : style.activeToggleButton;
 	return (
 		<div>
-			<button style={buttonStyle} className={values.name} name={values.name} onClick={toggleClick}>
-			{values.name + " " + values.active}
+			<button  className={activeStyle} name={values.id} onClick={toggleClick}>
+			{values.id}
 			</button>
 		</div>
 	)
