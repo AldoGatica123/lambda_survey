@@ -7,8 +7,8 @@ import axios from "axios";
 import {utils, isProfileIncomplete} from '../utils'
 import {Intro, SLIDE_01} from './Intro'
 import {SLIDE_02, SLIDE_03, SLIDE_04} from "./Profile_Slides";
-import {SLIDE_05} from "./Results";
-import Slide_06 from "./Slide_06";
+import {SLIDE_06} from "../ToggleButton";
+import SLIDE_05 from "./Slide_05";
 import Slide_07 from "./Slide_07";
 import Slide_08 from "./Slide_08";
 import Slide_09 from "./Slide_09";
@@ -87,21 +87,27 @@ class Main extends Component {
       case 43:
         return <SLIDE_03 style={style} nextStep={this.handleNext} handleChange={this.handleChange} values={profile}/>;
       case 44:
-        return <SLIDE_04 style={style} nextStep={this.handleNext} handleChange={this.handleChange} values={profile}
-                         handleCheckboxChange={this.handleCheckboxChange} disabled={(step === 4 && isProfileIncomplete(profile))}/>;
+        return <SLIDE_04 style={style} nextStep={this.handleNext} handleChange={this.handleChange}
+                         handleCheckboxChange={this.handleCheckboxChange} values={profile} disabled={(step === 4 && isProfileIncomplete(profile))}/>;
+      case 45:
+        return <SLIDE_05 key={0} question={this.survey_questions[0]} nextStep={this.handleNext} handleChangeResults={this.handleChangeResults} values={results}/>;
+      case 46:
+        return <SLIDE_05 key={1} question={this.survey_questions[1]} nextStep={this.handleNext} handleChangeResults={this.handleChangeResults} values={results}/>;
+      case 47:
+        return <SLIDE_05 key={2} question={this.survey_questions[2]} nextStep={this.handleNext} handleChangeResults={this.handleChangeResults} values={results}/>;
+      case 48:
+        return <SLIDE_05 key={3} question={this.survey_questions[3]} nextStep={this.handleNext} handleChangeResults={this.handleChangeResults} values={results}/>;
+      case 49:
+        return <SLIDE_05 key={4} question={this.survey_questions[4]} nextStep={this.handleNext} handleChangeResults={this.handleChangeResults} values={results}/>;
+      case 110:
+        return <SLIDE_05 key={5} question={this.survey_questions[5]} nextStep={this.handleNext} handleChangeResults={this.handleChangeResults} values={results}/>;
+      case 111:
+        return <SLIDE_05 key={6} question={this.survey_questions[6]} nextStep={this.handleNext} handleChangeResults={this.handleChangeResults} values={results}/>;
+      case 112:
+        return <SLIDE_05 key={7} question={this.survey_questions[7]} nextStep={this.handleNext} handleChangeResults={this.handleChangeResults} values={results}/>;
       case 0:
+        return <SLIDE_06 style={style}/>;
       case 1:
-      case 2:
-      case 3:
-      case 4:
-      case 5:
-      case 6:
-      case 7:
-        return <SLIDE_05 style={style} nextStep={this.handleNext} question={this.survey_questions[(step)]}
-                         key={(step)} handleChangeResults={this.handleChangeResults} values={results[this.survey_questions[step].id]}/>;
-      case 13:
-        return <Slide_06 nextStep={this.handleNext} values={results}/>;
-      case 14:
         return <Slide_07 nextStep={this.handleNext} values={results}/>;
       case 15:
         return <Slide_08 nextStep={this.handleNext} values={results}/>;
