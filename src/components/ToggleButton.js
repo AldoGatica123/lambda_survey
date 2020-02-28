@@ -4,18 +4,19 @@ import React, {useState} from "react";
 const SLIDE_06 = (props) => {
   const {style} = props;
 
-  const initialVal = [{ id: "aldo", active: false}, { id: "roberto", active: true}];
+  const initialVal = [{ id: "aldo", active: false}, { id: "aldo", active: true}, { id: "roberto", active: true}];
   const [buttonArray, setData] = useState(initialVal);
 
-  // const toggleButton = () => setData(data[0].name = "qwer");
-  const activation = (values) => {
-    console.log(values);
-    const newVal = {id: values, active: false};
-    setData([...buttonArray, newVal]);
+  const activation = (index) => {
+    console.log(index);
+    let newVal = buttonArray[index];
+    newVal.active = !newVal.active;
+    const newArray = Object.assign([], buttonArray, {[index]: newVal});
+    setData(newArray);
   };
 
   const buttons = buttonArray.map( (button, index) =>
-    <ToggleButton key={index} style={style} values={button} toggleClick={activation}/>
+    <ToggleButton id={index} style={style} values={button} toggleClick={activation}/>
   );
 
   return(
@@ -26,13 +27,13 @@ const SLIDE_06 = (props) => {
 };
 
 const ToggleButton = (props) => {
-  const {style, values, toggleClick} = props;
+  const {style, id, values, toggleClick} = props;
 
   let activeStyle = values.active ? style.inactiveToggleButton : style.activeToggleButton;
 
   return (
     <div>
-      <button  className={activeStyle} name={values.id} onClick={() => toggleClick(values.id)}>
+      <button  className={activeStyle} name={values.id} onClick={() => toggleClick(id)}>
         {values.id}
       </button>
     </div>
