@@ -81,7 +81,7 @@ class Main extends Component {
 
   renderSteps = (step, profile, results, style) => {
     switch (step) {
-      case 40:
+      case 0:
         return <Intro style={style} nextStep={this.handleNext}/>;
       case 41:
         return <SLIDE_01 style={style} nextStep={this.handleNext}/>;
@@ -102,7 +102,7 @@ class Main extends Component {
       case 12:
         return <SLIDE_05 style={style} nextStep={this.handleNext} question={this.survey_questions[(step-5)]}
                          key={(step-5)} handleChangeResults={this.handleChangeResults} values={results[this.survey_questions[step].id]}/>;
-      case 0:
+      case 13:
         return <SLIDE_06 style={style} nextStep={this.handleNext} values={feedback}/>;
       case 1:
         return <Slide_07 nextStep={this.handleNext} values={results}/>;
