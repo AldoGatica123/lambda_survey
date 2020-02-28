@@ -5,7 +5,7 @@ import styles from "./styles/SlidesStyle";
 import { KeyboardArrowLeft, KeyboardArrowRight } from '@material-ui/icons';
 import axios from "axios";
 import {utils, isProfileIncomplete} from '../utils'
-import {Intro, SLIDE_01} from './Intro'
+import {Intro, SLIDE_01, EndSlide} from './SimpleSlides'
 import {SLIDE_02, SLIDE_03, SLIDE_04} from "./ProfileSlides";
 import {SLIDE_05} from "./Results";
 import {SLIDE_06} from "./ToggleButton";
@@ -17,7 +17,6 @@ import Slide_11 from "./Slide_11";
 import Slide_12 from "./Slide_12";
 import Slide_13 from "./Slide_13";
 import Slide_14 from "./Slide_14";
-import EndSlide from "./EndSlide";
 
 // const baseURL = 'https://jh4snq3376.execute-api.us-east-1.amazonaws.com/api';
 const baseURL = 'http://localhost:8000';
@@ -101,9 +100,9 @@ class Main extends Component {
       case 12:
         return <SLIDE_05 style={style} nextStep={this.handleNext} question={this.survey_questions[(step-5)]}
                          key={(step-5)} handleChangeResults={this.handleChangeResults} values={results[this.survey_questions[step].id]}/>;
-      case 0:
+      case 50:
         return <SLIDE_06 style={style} nextStep={this.handleNext} values={results}/>;
-      case 1:
+      case 51:
         return <Slide_07 nextStep={this.handleNext} values={results}/>;
       case 15:
         return <Slide_08 nextStep={this.handleNext} values={results}/>;
@@ -119,8 +118,8 @@ class Main extends Component {
         return <Slide_13 nextStep={this.handleNext} values={results}/>;
       case 21:
         return <Slide_14 nextStep={this.handleNext} values={results}/>;
-      case 22:
-        return <EndSlide submit={this.handleSubmit}/>;
+      case 0:
+        return <EndSlide style={style} submit={this.handleSubmit}/>;
       default:
         return null;
     }
