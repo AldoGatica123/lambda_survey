@@ -8,7 +8,8 @@ import {utils, isProfileIncomplete} from '../utils'
 import {Intro, SLIDE_01} from './Intro'
 import {SLIDE_02, SLIDE_03, SLIDE_04} from "./ProfileSlides";
 import {SLIDE_05} from "./Results";
-import {SLIDE_06} from "./ToggleButton";
+import {SLIDE_06} from "./Feedback";
+
 import Slide_07 from "./Slide_07";
 import Slide_08 from "./Slide_08";
 import Slide_09 from "./Slide_09";
@@ -102,7 +103,7 @@ class Main extends Component {
         return <SLIDE_05 style={style} nextStep={this.handleNext} question={this.survey_questions[(step-5)]}
                          key={(step-5)} handleChangeResults={this.handleChangeResults} values={results[this.survey_questions[step].id]}/>;
       case 0:
-        return <SLIDE_06 style={style} nextStep={this.handleNext} values={results}/>;
+        return <SLIDE_06 style={style} nextStep={this.handleNext} values={feedback}/>;
       case 1:
         return <Slide_07 nextStep={this.handleNext} values={results}/>;
       case 15:

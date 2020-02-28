@@ -1,4 +1,12 @@
 
+let servicesArray = [
+  { label: "LEGAL", active: false},
+  { label: "PSICOLÓGICO", active: false},
+  { label: "ECONÓMICO", active: false},
+  { label: "MÉDICO", active: false},
+  { label: "ALBERGUE", active: false}
+];
+
 let utils= {
   profile:{
     survey_date: '',
@@ -22,8 +30,9 @@ let utils= {
     q_08: 1,
   },
 
+
   feedback: {
-    services_given: [],
+    services_given: servicesArray,
     needs_met: false,
     needs_feedback: '',
     refered_to_partner: false,
@@ -37,6 +46,7 @@ let utils= {
     confidential_feedback: '',
     suggestions: '',
   },
+
 
   contact: {
     contact_shared: false,
