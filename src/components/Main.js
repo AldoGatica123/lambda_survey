@@ -6,7 +6,7 @@ import { KeyboardArrowLeft, KeyboardArrowRight } from '@material-ui/icons';
 import axios from "axios";
 import {utils, isProfileIncomplete} from '../utils'
 import {Intro, SLIDE_01, EndSlide} from './SimpleSlides'
-import {SLIDE_02, SLIDE_03, SLIDE_04} from "./ProfileSlides";
+import {SLIDE_02, SLIDE_03, SLIDE_04, SLIDE_14} from "./ProfileSlides";
 import {SLIDE_05} from "./Results";
 import {SLIDE_06} from "./ToggleButton";
 import Slide_07 from "./Slide_07";
@@ -16,7 +16,6 @@ import Slide_10 from "./Slide_10";
 import Slide_11 from "./Slide_11";
 import Slide_12 from "./Slide_12";
 import Slide_13 from "./Slide_13";
-import Slide_14 from "./Slide_14";
 
 // const baseURL = 'https://jh4snq3376.execute-api.us-east-1.amazonaws.com/api';
 const baseURL = 'http://localhost:8000';
@@ -116,9 +115,9 @@ class Main extends Component {
         return <Slide_12 nextStep={this.handleNext} values={results}/>;
       case 20:
         return <Slide_13 nextStep={this.handleNext} values={results}/>;
-      case 21:
-        return <Slide_14 nextStep={this.handleNext} values={results}/>;
       case 0:
+        return <SLIDE_14 style={style} nextStep={this.handleNext} values={results}/>;
+      case 22:
         return <EndSlide style={style} submit={this.handleSubmit}/>;
       default:
         return null;
