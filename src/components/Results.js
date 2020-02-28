@@ -1,9 +1,6 @@
-import React, {Component} from "react";
+import React from "react";
 
-import Typography from "@material-ui/core/Typography";
-import Fab from "@material-ui/core/Fab";
-import Paper from "@material-ui/core/Paper";
-import Slider from "@material-ui/core/Slider"
+import {Typography, Fab, Paper, Slider} from "@material-ui/core";
 
 
 const marks = [

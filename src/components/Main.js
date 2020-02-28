@@ -6,9 +6,9 @@ import { KeyboardArrowLeft, KeyboardArrowRight } from '@material-ui/icons';
 import axios from "axios";
 import {utils, isProfileIncomplete} from '../utils'
 import {Intro, SLIDE_01} from './Intro'
-import {SLIDE_02, SLIDE_03, SLIDE_04} from "./Profile_Slides";
-import {SLIDE_06} from "../ToggleButton";
-import SLIDE_05 from "./Slide_05";
+import {SLIDE_02, SLIDE_03, SLIDE_04} from "./ProfileSlides";
+import {SLIDE_05} from "./Results";
+import {SLIDE_06} from "./ToggleButton";
 import Slide_07 from "./Slide_07";
 import Slide_08 from "./Slide_08";
 import Slide_09 from "./Slide_09";
@@ -24,6 +24,7 @@ const baseURL = 'http://localhost:8000';
 
 let profile = utils.profile;
 let results = utils.results;
+let feedback = utils.feedback;
 const questions = utils.survey_questions;
 
 class Main extends Component {
@@ -32,6 +33,7 @@ class Main extends Component {
     step: 0,
     profile,
     results,
+    feedback,
   };
 
   survey_questions = questions;
@@ -89,24 +91,18 @@ class Main extends Component {
       case 44:
         return <SLIDE_04 style={style} nextStep={this.handleNext} handleChange={this.handleChange}
                          handleCheckboxChange={this.handleCheckboxChange} values={profile} disabled={(step === 4 && isProfileIncomplete(profile))}/>;
-      case 45:
-        return <SLIDE_05 key={0} question={this.survey_questions[0]} nextStep={this.handleNext} handleChangeResults={this.handleChangeResults} values={results}/>;
-      case 46:
-        return <SLIDE_05 key={1} question={this.survey_questions[1]} nextStep={this.handleNext} handleChangeResults={this.handleChangeResults} values={results}/>;
-      case 47:
-        return <SLIDE_05 key={2} question={this.survey_questions[2]} nextStep={this.handleNext} handleChangeResults={this.handleChangeResults} values={results}/>;
-      case 48:
-        return <SLIDE_05 key={3} question={this.survey_questions[3]} nextStep={this.handleNext} handleChangeResults={this.handleChangeResults} values={results}/>;
-      case 49:
-        return <SLIDE_05 key={4} question={this.survey_questions[4]} nextStep={this.handleNext} handleChangeResults={this.handleChangeResults} values={results}/>;
-      case 110:
-        return <SLIDE_05 key={5} question={this.survey_questions[5]} nextStep={this.handleNext} handleChangeResults={this.handleChangeResults} values={results}/>;
-      case 111:
-        return <SLIDE_05 key={6} question={this.survey_questions[6]} nextStep={this.handleNext} handleChangeResults={this.handleChangeResults} values={results}/>;
-      case 112:
-        return <SLIDE_05 key={7} question={this.survey_questions[7]} nextStep={this.handleNext} handleChangeResults={this.handleChangeResults} values={results}/>;
+      case 5:
+      case 6:
+      case 7:
+      case 8:
+      case 9:
+      case 10:
+      case 11:
+      case 12:
+        return <SLIDE_05 style={style} nextStep={this.handleNext} question={this.survey_questions[(step-5)]}
+                         key={(step-5)} handleChangeResults={this.handleChangeResults} values={results[this.survey_questions[step].id]}/>;
       case 0:
-        return <SLIDE_06 style={style}/>;
+        return <SLIDE_06 style={style} nextStep={this.handleNext} values={results}/>;
       case 1:
         return <Slide_07 nextStep={this.handleNext} values={results}/>;
       case 15:

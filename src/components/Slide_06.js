@@ -1,6 +1,5 @@
 import React, {Component} from "react";
-import {withStyles} from "@material-ui/core/styles";
-import styles from "./styles/SlidesStyle";
+
 import Typography from "@material-ui/core/Typography";
 import Fab from "@material-ui/core/Fab";
 import Paper from "@material-ui/core/Paper";
