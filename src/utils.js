@@ -7,7 +7,7 @@ let servicesArray = [
   { label: "ALBERGUE", active: false}
 ];
 
-let needsSwitch = {on: 'Si', off: 'No', active: false};
+let switchYesNo = {on: 'Si', off: 'No', active: false};
 
 let utils= {
   profile:{
@@ -35,11 +35,11 @@ let utils= {
 
   feedback: {
     services_given: servicesArray,
-    needs_met: needsSwitch,
+    needs_met: switchYesNo,
     needs_feedback: '',
-    refered_to_partner: false,
+    referred_to_partner: switchYesNo,
     partner_service: 1,
-    had_problems: false,
+    had_problems: switchYesNo,
     problems_encountered: '',
     seen_on: [],
     additional_channels: '',

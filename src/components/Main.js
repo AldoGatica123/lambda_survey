@@ -8,10 +8,8 @@ import {utils, isProfileIncomplete} from '../utils'
 import {Intro, SLIDE_01, EndSlide} from './SimpleSlides'
 import {SLIDE_02, SLIDE_03, SLIDE_04, SLIDE_14} from "./Profile";
 import {SLIDE_05} from "./Results";
-import {SLIDE_06, SLIDE_07} from "./Feedback";
+import {SLIDE_06, SLIDE_07, SLIDE_08, SLIDE_09} from "./Feedback";
 
-import Slide_08 from "./Slide_08";
-import Slide_09 from "./Slide_09";
 import Slide_10 from "./Slide_10";
 import Slide_11 from "./Slide_11";
 import Slide_12 from "./Slide_12";
@@ -61,6 +59,13 @@ class Main extends Component {
     })
   };
 
+
+  handleChangeFeedback  = name => (e, value) => {
+    this.setState({
+      feedback: {...this.state.feedback, [name]: value},
+    });
+  };
+
   handleCheckboxChange = name => event => {
     this.setState({
       profile: {...this.state.profile, [name]: event.target.checked },
@@ -91,7 +96,7 @@ class Main extends Component {
         return <SLIDE_01 style={style} nextStep={this.handleNext}/>;
       case 42:
         return <SLIDE_02 style={style} nextStep={this.handleNext} handleChange={this.handleProfileChange} values={profile}/>;
-      case 1:
+      case 43:
         return <SLIDE_03 style={style} nextStep={this.handleNext} handleChange={this.handleProfileChange} values={profile}/>;
       case 44:
         return <SLIDE_04 style={style} nextStep={this.handleNext} handleChange={this.handleProfileChange}
@@ -108,12 +113,12 @@ class Main extends Component {
                          key={(step-5)} handleChangeResults={this.handleChangeResults} values={results[this.survey_questions[step].id]}/>;
       case 13:
         return <SLIDE_06 style={style} nextStep={this.handleNext} values={feedback}/>;
-      case 0:
+      case 14:
         return <SLIDE_07 style={style} nextStep={this.handleNext} handleChange={this.handleFeedbackChange} values={feedback}/>;
-      case 2:
-        return <Slide_08 nextStep={this.handleNext} values={results} />;
-      case 16:
-        return <Slide_09 nextStep={this.handleNext} values={results}/>;
+      case 15:
+        return <SLIDE_08 style={style} nextStep={this.handleNext} handleChange={this.handleChangeFeedback} values={feedback} />;
+      case 0:
+        return <SLIDE_09 style={style} nextStep={this.handleNext} handleChange={this.handleFeedbackChange} values={feedback} />;
       case 17:
         return <Slide_10 nextStep={this.handleNext} values={results}/>;
       case 18:
