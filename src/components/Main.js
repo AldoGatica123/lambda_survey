@@ -8,9 +8,8 @@ import {utils, isProfileIncomplete} from '../utils'
 import {Intro, SLIDE_01, EndSlide} from './SimpleSlides'
 import {SLIDE_02, SLIDE_03, SLIDE_04, SLIDE_14} from "./Profile";
 import {SLIDE_05} from "./Results";
-import {SLIDE_06, SLIDE_07, SLIDE_08, SLIDE_09} from "./Feedback";
+import {SLIDE_06, SLIDE_07, SLIDE_08, SLIDE_09, SLIDE_10} from "./Feedback";
 
-import Slide_10 from "./Slide_10";
 import Slide_11 from "./Slide_11";
 import Slide_12 from "./Slide_12";
 import Slide_13 from "./Slide_13";
@@ -116,11 +115,11 @@ class Main extends Component {
       case 14:
         return <SLIDE_07 style={style} nextStep={this.handleNext} handleChange={this.handleFeedbackChange} values={feedback}/>;
       case 15:
-        return <SLIDE_08 style={style} nextStep={this.handleNext} handleChange={this.handleChangeFeedback} values={feedback} />;
+        return <SLIDE_08 style={style} nextStep={this.handleNext} handleChange={this.handleChangeFeedback} values={feedback}/>;
+      case 16:
+        return <SLIDE_09 style={style} nextStep={this.handleNext} handleChange={this.handleFeedbackChange} values={feedback}/>;
       case 0:
-        return <SLIDE_09 style={style} nextStep={this.handleNext} handleChange={this.handleFeedbackChange} values={feedback} />;
-      case 17:
-        return <Slide_10 nextStep={this.handleNext} values={results}/>;
+        return <SLIDE_10 style={style} nextStep={this.handleNext} handleChange={this.handleFeedbackChange} values={feedback}/>;
       case 18:
         return <Slide_11 nextStep={this.handleNext} values={results}/>;
       case 19:

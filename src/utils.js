@@ -7,6 +7,14 @@ let servicesArray = [
   { label: "ALBERGUE", active: false}
 ];
 
+let channelsArray = [
+  { label: "INTERNET", active: false},
+  { label: "REDES SOCIALES", active: false},
+  { label: "FERIAS O KIOSKOS", active: false},
+  { label: "FOLLETOS", active: false},
+  { label: "REFERIDO", active: false}
+];
+
 let switchYesNo = {on: 'Si', off: 'No', active: false};
 
 let utils= {
@@ -41,7 +49,7 @@ let utils= {
     partner_service: 1,
     had_problems: switchYesNo,
     problems_encountered: '',
-    seen_on: [],
+    seen_on: channelsArray,
     additional_channels: '',
     global_valuation: 1,
     is_confidential: false,

@@ -139,8 +139,38 @@ const SLIDE_09 = (props) => {
 };
 
 
+const SLIDE_10 = (props) => {
+  const {style, nextStep, handleChange, values} = props;
+
+  return (
+    <div className={style.greenRoot}>
+      <div className={style.space}/>
+
+      <Paper className={style.paperS2} elevation={2} square={false}>
+        <Paper className={style.paperTitle} elevation={2} square={false}>
+          <Typography className={style.grayTitle} variant={"h5"} component={"h5"}>
+            <b>¿Cómo conoció del espacio seguro?</b>
+          </Typography>
+        </Paper>
+
+        <ToggleButtonGroup style={style} values={values.seen_on}/>
+
+        <div>
+          <TextField className={style.textFieldS7} name="additional_channels" label="Otros:"
+                     onChange={handleChange} value={values.additional_channels}/>
+        </div>
+      </Paper>
+
+      <Fab className={style.fabButton} onClick={nextStep} variant="extended" color="white" aria-label="add">
+        Siguiente
+      </Fab>
+    </div>
+  );
+};
 
 
 
 
-export {SLIDE_06, SLIDE_07, SLIDE_08, SLIDE_09}
+
+
+export {SLIDE_06, SLIDE_07, SLIDE_08, SLIDE_09, SLIDE_10}
