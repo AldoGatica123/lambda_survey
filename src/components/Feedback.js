@@ -1,8 +1,7 @@
 import React from "react";
 import {Typography, Fab, Paper} from "@material-ui/core";
 import {BiSwitch, ToggleButtonGroup} from "./ToggleButtonGroup";
-import TextField from "@material-ui/core/TextField";
-import Slider from "@material-ui/core/Slider";
+import {TextField, Slider, RadioGroup, FormControlLabel, Radio} from "@material-ui/core";
 
 const marks = [
   { value: 1, label: 'Muy Malo'},
@@ -12,6 +11,21 @@ const marks = [
   { value: 5, label: 'Muy Bueno'},
 ];
 
+
+const PaperTitle = (props) => {
+  const {style, title} = props;
+
+  return (
+    <Paper className={style.paperTitle} elevation={2} square={false}>
+      <Typography className={style.grayTitle} variant={"h5"} component={"h5"}>
+        <b>{title}</b>
+      </Typography>
+    </Paper>
+  )
+};
+
+
+
 const SLIDE_06 = (props) => {
   const {style, nextStep, values} = props;
 
@@ -20,11 +34,8 @@ const SLIDE_06 = (props) => {
       <div className={style.space}/>
 
       <Paper className={style.paperS2} elevation={2} square={false}>
-        <Paper className={style.paperTitle} elevation={2} square={false}>
-          <Typography className={style.grayTitle} variant={"h5"} component={"h5"}>
-            <b>Servicio prestado en el espacio seguro</b>
-          </Typography>
-        </Paper>
+        <PaperTitle style={style} title={"Servicio prestado en el espacio seguro"}/>
+
         <ToggleButtonGroup style={style} values={values.services_given}/>
 
         <Typography className={style.grayTypo} variant={"h5"} component={"h5"}>
@@ -48,11 +59,7 @@ const SLIDE_07 = (props) => {
       <div className={style.space}/>
 
       <Paper className={style.paperS2} elevation={2} square={false}>
-        <Paper className={style.paperTitle} elevation={2} square={false}>
-          <Typography className={style.grayTitle} variant={"h5"} component={"h5"}>
-            <b>¿Se le dió respuesta a sus necesidades?</b>
-          </Typography>
-        </Paper>
+        <PaperTitle style={style} title={"¿Se le dió respuesta a sus necesidades?"}/>
 
         <BiSwitch style={style} values={values.needs_met}/>
 
@@ -81,11 +88,7 @@ const SLIDE_08 = (props) => {
       <div className={style.space}/>
 
       <Paper className={style.paperS2} elevation={2} square={false}>
-        <Paper className={style.paperTitle} elevation={2} square={false}>
-          <Typography className={style.grayTitle} variant={"h5"} component={"h5"}>
-            <b>¿Se le refirió con otro socio de la Red Nacional de Protección para cubrir necesidades?</b>
-          </Typography>
-        </Paper>
+        <PaperTitle style={style} title={"¿Se le refirió con otro socio de la Red Nacional de Protección para cubrir necesidades?"}/>
 
         <BiSwitch style={style} values={values.referred_to_partner}/>
 
@@ -115,11 +118,7 @@ const SLIDE_09 = (props) => {
       <div className={style.space}/>
 
       <Paper className={style.paperS2} elevation={2} square={false}>
-        <Paper className={style.paperTitle} elevation={2} square={false}>
-          <Typography className={style.grayTitle} variant={"h5"} component={"h5"}>
-            <b>¿Ha tenido algún problema o incidente durante su estancia en el espacio seguro ofrecido por Lambda?</b>
-          </Typography>
-        </Paper>
+        <PaperTitle style={style} title={"¿Ha tenido algún problema o incidente durante su estancia en el espacio seguro ofrecido por Lambda?"}/>
 
         <BiSwitch style={style} values={values.had_problems}/>
 
@@ -147,11 +146,7 @@ const SLIDE_10 = (props) => {
       <div className={style.space}/>
 
       <Paper className={style.paperS2} elevation={2} square={false}>
-        <Paper className={style.paperTitle} elevation={2} square={false}>
-          <Typography className={style.grayTitle} variant={"h5"} component={"h5"}>
-            <b>¿Cómo conoció del espacio seguro?</b>
-          </Typography>
-        </Paper>
+        <PaperTitle style={style} title={"¿Cómo conoció del espacio seguro?"}/>
 
         <ToggleButtonGroup style={style} values={values.seen_on}/>
 
@@ -161,7 +156,86 @@ const SLIDE_10 = (props) => {
         </div>
       </Paper>
 
-      <Fab className={style.fabButton} onClick={nextStep} variant="extended" color="white" aria-label="add">
+      <Fab className={style.fabButton} onClick={nextStep} variant="extended" aria-label="add" href={""}>
+        Siguiente
+      </Fab>
+    </div>
+  );
+};
+
+
+
+const SLIDE_11 = (props) => {
+  const {style, nextStep, handleChange, values} = props;
+
+  return (
+    <div className={style.greenRoot}>
+      <div className={style.space}/>
+
+      <Paper className={style.paperS2} elevation={2} square={false}>
+        <PaperTitle style={style} title={"¿Cuál es su valoración global sobre el espacio seguro que ofrece Lambda?"}/>
+
+        <div className={style.containerS11}>
+          <RadioGroup className={style.containerToggleS11} name="global_valuation" value={values.global_valuation} onChange={handleChange}>
+            <FormControlLabel value="very_good" control={<Radio />} label="Muy Buena" />
+            <FormControlLabel value="good" control={<Radio />} label="Buena" />
+            <FormControlLabel value="regular" control={<Radio />} label="Regular" />
+            <FormControlLabel value="bad" control={<Radio />} label="Mala" />
+            <FormControlLabel value="very_bad" control={<Radio />} label="Muy Mala" />
+          </RadioGroup>
+        </div>
+      </Paper>
+
+      <Fab className={style.fabButton} onClick={nextStep} variant="extended" aria-label="add" href={""}>
+        Siguiente
+      </Fab>
+    </div>
+  );
+};
+
+
+const SLIDE_12 = (props) => {
+  const {style, nextStep, handleChange, values} = props;
+
+  return (
+    <div className={style.purpleRoot}>
+      <div className={style.space}/>
+
+      <Paper className={style.paperS2} elevation={2} square={false}>
+        <PaperTitle style={style} title={"¿Considera que sus datos personales u otra información personal ha sido tratada de manera confidencial?"}/>
+
+        <BiSwitch style={style} values={values.is_confidential}/>
+
+        <Typography className={style.grayTypo} variant={"h6"} component={"h6"}>
+          Si su respuesta fue NO, por favor indicarnos por qué
+        </Typography>
+        <TextField className={style.textFieldS7} name="confidential_feedback" multiline rows="3" type="text"
+                   variant="outlined" onChange={handleChange} value={values.confidential_feedback}/>
+      </Paper>
+
+      <Fab className={style.fabButton} onClick={nextStep} variant="extended" aria-label="add" href={""}>
+        Siguiente
+      </Fab>
+    </div>
+  );
+};
+
+
+const SLIDE_13 = (props) => {
+  const {style, nextStep, handleChange, values} = props;
+
+  return (
+    <div className={style.purpleRoot}>
+      <div className={style.space}/>
+
+      <Paper className={style.paperS2} elevation={2} square={false}>
+        <PaperTitle style={style} title={"Anote sugerencias para mejorar los servicios prestados"}/>
+
+        <TextField className={style.textFieldS7} name="suggestions" multiline rows="6" type="text" variant="outlined"
+                   placeholder={"Agradecemos sus comentarios"} onChange={handleChange} value={values.suggestions}/>
+      </Paper>
+
+      <Fab className={style.fabButton} onClick={nextStep} variant="extended" aria-label="add" href={""}>
         Siguiente
       </Fab>
     </div>
@@ -173,4 +247,4 @@ const SLIDE_10 = (props) => {
 
 
 
-export {SLIDE_06, SLIDE_07, SLIDE_08, SLIDE_09, SLIDE_10}
+export {SLIDE_06, SLIDE_07, SLIDE_08, SLIDE_09, SLIDE_10, SLIDE_11, SLIDE_12, SLIDE_13}

@@ -1,6 +1,4 @@
 import React, {useState} from "react";
-import {Paper} from "@material-ui/core";
-
 
 const ToggleButtonGroup = (props) => {
   const {style, values} = props;

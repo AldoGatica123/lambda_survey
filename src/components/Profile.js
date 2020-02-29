@@ -169,6 +169,7 @@ const SLIDE_04 = (props) => {
 const SLIDE_14 = (props) => {
   const {style, nextStep, handleChange, values} = props;
 
+
   return (
     <div className={style.greenRoot}>
         <div className={style.space}/>
@@ -182,8 +183,8 @@ const SLIDE_14 = (props) => {
           </Paper>
 
           <RadioGroup className={style.containerToggle} name="anonymity" value={values.anonymity} onChange={handleChange}>
-            <FormControlLabel value="anonymous" control={<Radio />} label="de forma anónima" />
-            <FormControlLabel value="non_anon" control={<Radio />} label="deseo añadir mis datos personales" />
+            <FormControlLabel value={"true"} control={<Radio />} label="de forma anónima" />
+            <FormControlLabel value={"false"} control={<Radio />} label="deseo añadir mis datos personales" />
           </RadioGroup>
 
           <TextField name="first_name" label="Nombre" type="text"
@@ -197,7 +198,7 @@ const SLIDE_14 = (props) => {
 
         </Paper>
 
-        <Fab className={style.fabButton} onClick={nextStep} variant="extended" color="white" aria-label="add">
+        <Fab className={style.fabButton} onClick={nextStep} variant="extended" aria-label="add" href={""}>
           Finalizar encuesta
         </Fab>
       </div>
