@@ -10,7 +10,6 @@ import {SLIDE_02, SLIDE_03, SLIDE_04, SLIDE_14} from "./Profile";
 import {SLIDE_05} from "./Results";
 import {SLIDE_06, SLIDE_07} from "./Feedback";
 
-// import Slide_07 from "./Slide_07";
 import Slide_08 from "./Slide_08";
 import Slide_09 from "./Slide_09";
 import Slide_10 from "./Slide_10";
@@ -84,7 +83,7 @@ class Main extends Component {
   };
 
 
-  renderSteps = (step, profile, results, style) => {
+  renderSteps = (step, profile, results, feedback, style) => {
     switch (step) {
       case 40:
         return <Intro style={style} nextStep={this.handleNext}/>;
@@ -92,7 +91,7 @@ class Main extends Component {
         return <SLIDE_01 style={style} nextStep={this.handleNext}/>;
       case 42:
         return <SLIDE_02 style={style} nextStep={this.handleNext} handleChange={this.handleProfileChange} values={profile}/>;
-      case 43:
+      case 1:
         return <SLIDE_03 style={style} nextStep={this.handleNext} handleChange={this.handleProfileChange} values={profile}/>;
       case 44:
         return <SLIDE_04 style={style} nextStep={this.handleNext} handleChange={this.handleProfileChange}
@@ -110,8 +109,8 @@ class Main extends Component {
       case 13:
         return <SLIDE_06 style={style} nextStep={this.handleNext} values={feedback}/>;
       case 0:
-        return <SLIDE_07 style={style} nextStep={this.handleNext} values={feedback} handleChange={this.handleFeedbackChange}/>;
-      case 15:
+        return <SLIDE_07 style={style} nextStep={this.handleNext} handleChange={this.handleFeedbackChange} values={feedback}/>;
+      case 2:
         return <Slide_08 nextStep={this.handleNext} values={results} />;
       case 16:
         return <Slide_09 nextStep={this.handleNext} values={results}/>;
@@ -123,7 +122,7 @@ class Main extends Component {
         return <Slide_12 nextStep={this.handleNext} values={results}/>;
       case 20:
         return <Slide_13 nextStep={this.handleNext} values={results}/>;
-      case 0:
+      case 21:
         return <SLIDE_14 style={style} nextStep={this.handleNext} values={results}/>;
       case 22:
         return <EndSlide style={style} submit={this.handleSubmit}/>;
@@ -134,7 +133,7 @@ class Main extends Component {
 
   render() {
     const { classes } = this.props;
-    const { step, profile, results } = this.state;
+    const { step, profile, results , feedback} = this.state;
     const maxSteps = 23;
 
     return (
@@ -154,7 +153,7 @@ class Main extends Component {
                        }
         />
         <div className={classes.containerS3}>
-          {this.renderSteps(step, profile, results, classes)}
+          {this.renderSteps(step, profile, results, feedback, classes)}
         </div>
       </div>
     )

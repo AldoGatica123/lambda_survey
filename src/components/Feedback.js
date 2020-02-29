@@ -24,7 +24,7 @@ const SLIDE_06 = (props) => {
         </Typography>
       </Paper>
 
-      <Fab className={style.fabButton} onClick={nextStep} variant="extended" aria-label="add">
+      <Fab className={style.fabButton} onClick={nextStep} variant="extended" aria-label="add" href={""}>
         Siguiente
       </Fab>
     </div>
@@ -34,7 +34,6 @@ const SLIDE_06 = (props) => {
 
 const SLIDE_07 = (props) => {
   const {style, nextStep, handleChange, values} = props;
-  console.log(props);
 
   return (
     <div className={style.orangeRoot}>
@@ -53,8 +52,8 @@ const SLIDE_07 = (props) => {
           Si su respuesta fue NO, por favor indicarnos por qué
         </Typography>
 
-        <TextField className={style.textFieldS7} name="needs_feedback" multiline rows="2"
-                   variant="outlined" onChange={handleChange}  value={values.needs_feedback}/>
+        <TextField className={style.textFieldS7} name="needs_feedback" multiline rows="2" type="text"
+                   variant="outlined" onChange={handleChange} value={values.needs_feedback}/>
 
       </Paper>
 
