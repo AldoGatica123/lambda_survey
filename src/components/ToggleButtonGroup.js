@@ -1,9 +1,9 @@
 import React, {useState} from "react";
+import {Paper} from "@material-ui/core";
 
 
 const ToggleButtonGroup = (props) => {
   const {style, values} = props;
-
   const [buttonArray, setData] = useState(values);
 
   const activation = (index) => {
@@ -26,7 +26,7 @@ const ToggleButtonGroup = (props) => {
 const ToggleButton = (props) => {
   const {id, style, values, toggleClick} = props;
 
-  let activeStyle = values.active ? style.inactiveToggleButton : style.activeToggleButton;
+  let activeStyle = values.active ? style.activeToggleButton : style.inactiveToggleButton;
 
   return (
     <button  className={activeStyle} name={values.label} onClick={() => toggleClick(id)}>
@@ -35,4 +35,33 @@ const ToggleButton = (props) => {
   )
 };
 
-export {ToggleButtonGroup}
+
+const BiSwitch = (props) => {
+  const {style, values} = props;
+  const [activated, setData] = useState(values);
+
+
+  let leftStyle = activated.active ? style.switchLeftOn : style.switchLeftOff;
+  let rightStyle = !activated.active ? style.switchRightOn : style.switchRightOff;
+
+  const switchClick = () => {
+    let newVal = activated;
+    newVal.active = !newVal.active;
+    setData({...newVal});
+  };
+
+  return(
+    <div>
+      <button className={leftStyle} name={values.on} onClick={switchClick}>
+        {values.on}
+      </button>
+      <button className={rightStyle} name={values.off} onClick={switchClick}>
+        {values.off}
+      </button>
+    </div>
+  )
+
+};
+
+
+export {ToggleButtonGroup, BiSwitch}

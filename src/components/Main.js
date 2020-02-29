@@ -6,11 +6,11 @@ import { KeyboardArrowLeft, KeyboardArrowRight } from '@material-ui/icons';
 import axios from "axios";
 import {utils, isProfileIncomplete} from '../utils'
 import {Intro, SLIDE_01} from './Intro'
-import {SLIDE_02, SLIDE_03, SLIDE_04} from "./ProfileSlides";
+import {SLIDE_02, SLIDE_03, SLIDE_04} from "./Profile";
 import {SLIDE_05} from "./Results";
-import {SLIDE_06} from "./Feedback";
+import {SLIDE_06, SLIDE_07} from "./Feedback";
 
-import Slide_07 from "./Slide_07";
+// import Slide_07 from "./Slide_07";
 import Slide_08 from "./Slide_08";
 import Slide_09 from "./Slide_09";
 import Slide_10 from "./Slide_10";
@@ -51,9 +51,16 @@ class Main extends Component {
     }));
   };
 
-  handleChange = (e) => {
+  handleProfileChange = (e) => {
     this.setState({
       profile: {...this.state.profile, [e.target.name]: e.target.value},
+    })
+  };
+
+
+  handleFeedbackChange = (e) => {
+    this.setState({
+      feedback: {...this.state.feedback, [e.target.name]: e.target.value},
     })
   };
 
@@ -81,16 +88,16 @@ class Main extends Component {
 
   renderSteps = (step, profile, results, style) => {
     switch (step) {
-      case 0:
+      case 40:
         return <Intro style={style} nextStep={this.handleNext}/>;
       case 41:
         return <SLIDE_01 style={style} nextStep={this.handleNext}/>;
       case 42:
-        return <SLIDE_02 style={style} nextStep={this.handleNext} handleChange={this.handleChange} values={profile}/>;
+        return <SLIDE_02 style={style} nextStep={this.handleNext} handleChange={this.handleProfileChange} values={profile}/>;
       case 43:
-        return <SLIDE_03 style={style} nextStep={this.handleNext} handleChange={this.handleChange} values={profile}/>;
+        return <SLIDE_03 style={style} nextStep={this.handleNext} handleChange={this.handleProfileChange} values={profile}/>;
       case 44:
-        return <SLIDE_04 style={style} nextStep={this.handleNext} handleChange={this.handleChange}
+        return <SLIDE_04 style={style} nextStep={this.handleNext} handleChange={this.handleProfileChange}
                          handleCheckboxChange={this.handleCheckboxChange} values={profile} disabled={(step === 4 && isProfileIncomplete(profile))}/>;
       case 5:
       case 6:
@@ -104,10 +111,10 @@ class Main extends Component {
                          key={(step-5)} handleChangeResults={this.handleChangeResults} values={results[this.survey_questions[step].id]}/>;
       case 13:
         return <SLIDE_06 style={style} nextStep={this.handleNext} values={feedback}/>;
-      case 1:
-        return <Slide_07 nextStep={this.handleNext} values={results}/>;
+      case 0:
+        return <SLIDE_07 style={style} nextStep={this.handleNext} values={feedback} handleChange={this.handleFeedbackChange}/>;
       case 15:
-        return <Slide_08 nextStep={this.handleNext} values={results}/>;
+        return <Slide_08 nextStep={this.handleNext} values={results} />;
       case 16:
         return <Slide_09 nextStep={this.handleNext} values={results}/>;
       case 17:
