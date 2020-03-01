@@ -11,7 +11,7 @@ import {SLIDE_05} from "./Results";
 import {SLIDE_06, SLIDE_07, SLIDE_08, SLIDE_09, SLIDE_10,
   SLIDE_11, SLIDE_12, SLIDE_13} from "./Feedback";
 
-const baseURL = 'https://jh4snq3376.execute-api.us-east-1.amazonaws.com/api';
+const baseURL = 'https://jh4snq3376.execute-api.us-east-1.amazonaws.com/api/\n';
 // const baseURL = 'http://localhost:8000';
 
 let profile = utils.profile;
@@ -84,7 +84,7 @@ class Main extends Component {
       .then(res => {
         console.log(res);
         console.log(res.data);
-      })
+      });
     this.handleNext();
   };
 
@@ -153,13 +153,13 @@ class Main extends Component {
       <div className={classes.containerS3}>
         <MobileStepper className={classes.stepper} steps={maxSteps} position="static" activeStep={step}
                        nextButton={
-                         <Button size="small" onClick={this.handleNext} disabled={step === maxSteps - 1 || (step === 4 && isProfileIncomplete(profile))}>
+                         <Button size="small" onClick={this.handleNext} disabled={step === maxSteps - 1 || (step === 4 && isProfileIncomplete(profile))} href={""}>
                            Siguiente
                            <KeyboardArrowRight />
                          </Button>
                        }
                        backButton={
-                         <Button size="small" onClick={this.handleBack} disabled={step === 0}>
+                         <Button size="small" onClick={this.handleBack} disabled={step === 0} href={""}>
                            <KeyboardArrowLeft />
                            Atrás
                          </Button>
