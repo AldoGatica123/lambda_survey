@@ -171,10 +171,8 @@ const SLIDE_11 = (props) => {
   return (
     <div className={style.greenRoot}>
       <div className={style.space}/>
-
       <Paper className={style.paperS2} elevation={2} square={false}>
         <PaperTitle style={style} title={"¿Cuál es su valoración global sobre el espacio seguro que ofrece Lambda?"}/>
-
         <div className={style.containerS11}>
           <RadioGroup className={style.containerToggleS11} name="global_valuation" value={values.global_valuation} onChange={handleChange}>
             <FormControlLabel value="very_good" control={<Radio />} label="Muy Buena" />
