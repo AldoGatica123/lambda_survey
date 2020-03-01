@@ -160,12 +160,50 @@ const SLIDE_04 = (props) => {
       {disabled > 0 &&
       <h5 style={{ color: 'white' }}>
         Para comenzar la encuesta, por favor llena todos los campos anteriores.
-      </h5>
-      }
-
+      </h5>}
     </div>
   )
 };
 
 
-export {SLIDE_02, SLIDE_03, SLIDE_04};
+const SLIDE_14 = (props) => {
+  const {style, nextStep, handleChange, values} = props;
+
+
+  return (
+    <div className={style.greenRoot}>
+        <div className={style.space}/>
+
+        <Paper className={style.paperS2} elevation={2} square={false}>
+
+          <Paper className={style.paperTitle} elevation={2} square={false}>
+            <Typography className={style.grayTitle} variant={"h5"} component={"h5"}>
+              <b>Deseo enviar la encuesta de las siguiente manera:</b>
+            </Typography>
+          </Paper>
+
+          <RadioGroup className={style.containerToggle} name="anonymity" value={values.anonymity} onChange={handleChange}>
+            <FormControlLabel value={"true"} control={<Radio />} label="de forma anónima" />
+            <FormControlLabel value={"false"} control={<Radio />} label="deseo añadir mis datos personales" />
+          </RadioGroup>
+
+          <TextField name="first_name" label="Nombre" type="text"
+                     className={style.textFieldS14} onChange={handleChange} value={values.first_name}/>
+          <TextField name="last_name" label="Apellidos" type="text"
+                     className={style.textFieldS14} onChange={handleChange} value={values.last_name}/>
+          <TextField name="email" label="Correo Electrónico" type="email"
+                     className={style.textFieldS14} onChange={handleChange} value={values.email}/>
+          <TextField name="phone_number" label="Número de Teléfono" type="number"
+                     className={style.textFieldS14} onChange={handleChange} value={values.phone_number}/>
+
+        </Paper>
+
+        <Fab className={style.fabButton} onClick={nextStep} variant="extended" aria-label="add" href={""}>
+          Finalizar encuesta
+        </Fab>
+      </div>
+  )
+};
+
+
+export {SLIDE_02, SLIDE_03, SLIDE_04, SLIDE_14};

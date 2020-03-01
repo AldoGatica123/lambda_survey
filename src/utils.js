@@ -1,4 +1,20 @@
 
+let servicesArray = [
+  { label: "LEGAL", active: false},
+  { label: "PSICOLÓGICO", active: false},
+  { label: "ECONÓMICO", active: false},
+  { label: "MÉDICO", active: false},
+  { label: "ALBERGUE", active: false}
+];
+
+let channelsArray = [
+  { label: "INTERNET", active: false},
+  { label: "REDES SOCIALES", active: false},
+  { label: "FERIAS O KIOSKOS", active: false},
+  { label: "FOLLETOS", active: false},
+  { label: "REFERIDO", active: false}
+];
+
 let utils= {
   profile:{
     survey_date: '',
@@ -10,7 +26,6 @@ let utils= {
     indigenous: false,
     disability: false,
   },
-
   results: {
     q_01: 1,
     q_02: 1,
@@ -21,29 +36,28 @@ let utils= {
     q_07: 1,
     q_08: 1,
   },
-
   feedback: {
-    services_given: [],
-    needs_met: false,
+    services_given: servicesArray,
+    needs_met: {on: 'Si', off: 'No', active: false},
     needs_feedback: '',
-    refered_to_partner: false,
+    referred_to_partner: {on: 'Si', off: 'No', active: false},
     partner_service: 1,
-    had_problems: false,
+    had_problems: {on: 'Si', off: 'No', active: false},
     problems_encountered: '',
-    seen_on: [],
+    seen_on: channelsArray,
     additional_channels: '',
-    global_valuation: 1,
-    is_confidential: false,
+    global_valuation: '',
+    is_confidential: {on: 'Si', off: 'No', active: false},
     confidential_feedback: '',
     suggestions: '',
   },
 
   contact: {
-    contact_shared: false,
+    anonymity: "true",
     first_name: '',
     last_name: '',
     email: '',
-    phone: '',
+    phone_number: '',
   },
 
   survey_questions: [

@@ -1,11 +1,13 @@
 # Lambda Survey
 
 ## Description
-React web app for a survey.
-Asks the users for their feedback on the Asociación Lambda services.
-<!-- Add the live demo link -->
+The app gathers feedback from the users about the Asociación Lambda services.
 
-<!-- Add screenshot -->
+React web app using hooks and functional components.  
+
+[Live Demo](https://master.d1lvjpzd91wjlf.amplifyapp.com/)
+
+![screenshot](https://user-images.githubusercontent.com/10179447/75515475-c19ae180-59bf-11ea-943e-6fd07da063c9.png)
 
 ## Quickstart
 Run locally using:
@@ -18,3 +20,9 @@ npm start
 Deployments are being managed by AWS Amplify
 The pipeline is set up to deploy the code in the __main__ branch.
 _To deploy a new version, create a pull request_
+
+
+## Components
+
+![components](https://user-images.githubusercontent.com/10179447/75516560-63bbc900-59c2-11ea-9588-1bbf6e0ba37b.jpg)
+

@@ -43,4 +43,19 @@ const SLIDE_01 = (props) => {
   )
 };
 
-export {Intro, SLIDE_01};
+const EndSlide = (props) => {
+  const {style, submit} = props;
+
+  return (
+    <div className={style.blackRoot}>
+      <Typography className={style.whiteTitleEnding} variant={"h2"} component={"h2"}><b>¡MUCHAS GRACIAS POR TU RETROALIMENTACIÓN!</b></Typography>
+      <Typography className={style.whiteTypo} variant={"h5"} component={"h5"}>Tus comentarios nos ayudan a mejorar nuestro servicio.</Typography>
+      <Fab className={style.fabButton} onClick={submit} variant="extended" aria-label="add">
+        Volver a Empezar
+      </Fab>
+    </div>
+  )
+};
+
+
+export {Intro, SLIDE_01, EndSlide};
