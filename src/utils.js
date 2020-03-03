@@ -46,7 +46,7 @@ let utils= {
     problems_encountered: '',
     seen_on: channelsArray,
     additional_channels: '',
-    global_valuation: '',
+    global_valuation: 'regular',
     is_confidential: {on: 'Si', off: 'No', active: false},
     confidential_feedback: '',
     suggestions: '',

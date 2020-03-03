@@ -11,8 +11,7 @@ import {SLIDE_05} from "./Results";
 import {SLIDE_06, SLIDE_07, SLIDE_08, SLIDE_09, SLIDE_10,
   SLIDE_11, SLIDE_12, SLIDE_13} from "./Feedback";
 
-const baseURL = 'https://jh4snq3376.execute-api.us-east-1.amazonaws.com/api/\n';
-// const baseURL = 'http://localhost:8000';
+const baseURL = 'https://bxmscxw7j1.execute-api.us-east-1.amazonaws.com/api';
 
 let profile = utils.profile;
 let results = utils.results;
@@ -82,18 +81,17 @@ class Main extends Component {
   handleSubmit = () => {
     axios.post(baseURL + '/notify', { ...this.state })
       .then(res => {
-        console.log(res);
         console.log(res.data);
-      });
+      })
+      .catch(error => {
+          console.log(error.response)
+      });;
     this.handleNext();
   };
 
   handleReset = () => {
     this.setState({step: 0});
   };
-
-
-
 
 
   renderSteps = (step, profile, results, feedback, contact, style) => {
