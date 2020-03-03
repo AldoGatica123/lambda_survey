@@ -12,7 +12,6 @@ import {SLIDE_06, SLIDE_07, SLIDE_08, SLIDE_09, SLIDE_10,
   SLIDE_11, SLIDE_12, SLIDE_13} from "./Feedback";
 
 const baseURL = 'https://bxmscxw7j1.execute-api.us-east-1.amazonaws.com/api';
-// const baseURL = 'http://localhost:8000';
 
 let profile = utils.profile;
 let results = utils.results;

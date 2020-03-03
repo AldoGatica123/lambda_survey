@@ -16,6 +16,12 @@ npm install
 npm start  
 ```
 
+### AWS Profile
+To use the AWS CLI with the corresponding profile use:
+```bash
+export AWS_PROFILE=profile_name
+```
+
 ## Deployment
 Deployments are being managed by AWS Amplify
 The pipeline is set up to deploy the code in the __main__ branch.
