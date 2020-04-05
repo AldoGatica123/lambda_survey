@@ -1,11 +1,11 @@
 # Lambda Survey
 
 ## Description
-The app gathers feedback from the users about the Asociación Lambda services.
+The app gathers feedback from the users about the Asociación Lambda services and sends it in an email.
 
 React web app using hooks and functional components.  
 
-[Live Demo](https://master.d1lvjpzd91wjlf.amplifyapp.com/)
+[Live Demo](https://prod.d1lvjpzd91wjlf.amplifyapp.com/)
 
 ![screenshot](https://user-images.githubusercontent.com/10179447/75515475-c19ae180-59bf-11ea-943e-6fd07da063c9.png)
 
@@ -16,6 +16,11 @@ npm install
 npm start  
 ```
 
+## Environment Variables
+```text
+REACT_APP_CHALICE_URL=[url]
+```
+
 ### AWS Profile
 To use the AWS CLI with the corresponding profile use:
 ```bash
@@ -24,7 +29,7 @@ export AWS_PROFILE=profile_name
 
 ## Deployment
 Deployments are being managed by AWS Amplify
-The pipeline is set up to deploy the code in the __main__ branch.
+The pipeline is set up to deploy the code in the __main__ and __prod__ branches.
 _To deploy a new version, create a pull request_
 
 
