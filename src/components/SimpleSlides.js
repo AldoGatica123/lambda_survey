@@ -11,7 +11,7 @@ const Intro = (props) => {
       <img className={style.landingLogo} src={logo} alt={logo}/>
       <Typography className={style.whiteTypo} variant={"h4"} component={"h4"}>Encuesta de satisfacción de servicio</Typography>
       <Fab className={style.fabButton} onClick={nextStep}
-           variant="extended" color="white" aria-label="add" href={""}>
+           variant="extended" aria-label="add" href={""}>
         Inicia
       </Fab>
     </div>
@@ -36,7 +36,7 @@ const SLIDE_01 = (props) => {
       </Paper>
 
       <Fab className={style.fabButton} onClick={nextStep}
-           variant="extended" color="white" aria-label="add" href={""}>
+           variant="extended" aria-label="add" href={""}>
         Siguiente
       </Fab>
     </div>
