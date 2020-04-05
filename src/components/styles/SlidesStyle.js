@@ -46,9 +46,9 @@ export default (theme) => ({
     width: "80%",
     marginLeft: "auto",
     marginRight: "auto",
-    marginTop: theme.spacing.unit * 6,
-    paddingTop: theme.spacing.unit * 2,
-    paddingBottom: theme.spacing.unit * 8,
+    marginTop: theme.spacing(6),
+    paddingTop: theme.spacing(2),
+    paddingBottom: theme.spacing(8),
   },
   paperS2: {
     width: "80%",
@@ -71,8 +71,8 @@ export default (theme) => ({
   },
   paperTitle: {
     width: "105%",
-    marginLeft: theme.spacing.unit * -3,
-    marginBottom: theme.spacing.unit * 4,
+    marginLeft: theme.spacing(-3),
+    marginBottom: theme.spacing(4),
   },
   containerS3:{
     width: "100%",
@@ -96,13 +96,13 @@ export default (theme) => ({
   },
   containerToggleS11:{
     display: "block",
-    marginTop: theme.spacing.unit * 4,
-    marginBottom: theme.spacing.unit * 6,
+    marginTop: theme.spacing(4),
+    marginBottom: theme.spacing(6),
     width: "100%",
   },
   containerCheckbox:{
     width: "35%",
-    padding: theme.spacing.unit * 2,
+    padding: theme.spacing(2),
     textAlign: "left",
     display: "table-cell",
   },
@@ -110,55 +110,55 @@ export default (theme) => ({
   //Images
   landingLogo: {
     width: "40%",
-    marginTop: theme.spacing.unit * 8,
-    marginBottom: theme.spacing.unit * 4,
+    marginTop: theme.spacing(8),
+    marginBottom: theme.spacing(4),
   },
 
   //Text
   whiteTitle:{
-    padding: theme.spacing.unit * 4,
+    padding: theme.spacing(4),
     color: 'white',
   },
   grayTitle:{
-    padding: theme.spacing.unit * 6,
+    padding: theme.spacing(6),
     color: 'gray',
   },
   whiteTypo:{
-    padding: theme.spacing.unit * 4,
+    padding: theme.spacing(4),
     color: 'white',
   },
   grayTypo:{
-    padding: theme.spacing.unit * 4,
+    padding: theme.spacing(4),
     color: 'gray',
   },
   blackTypo:{
-    padding: theme.spacing.unit * 4,
+    padding: theme.spacing(4),
     color: 'black',
   },
   tableTypo:{
-    padding: theme.spacing.unit * 3,
+    padding: theme.spacing(3),
     display: "table-cell",
     width: "35%",
     color: 'dimgray',
   },
   whiteTitleEnding:{
-    paddingTop: theme.spacing.unit * 20,
+    paddingTop: theme.spacing(20),
     color: 'white',
   },
 
   //Widgets
   fabButton:{
-    margin: theme.spacing.unit * 3,
+    margin: theme.spacing(3),
     backgroundColor: 'white',
   },
   slider: {
-    marginTop: theme.spacing.unit * 3,
-    marginBottom: theme.spacing.unit * 3,
+    marginTop: theme.spacing(3),
+    marginBottom: theme.spacing(3),
     width: "100%",
     maxWidth: "600px",
   },
   datePicker: {
-    marginBottom: theme.spacing.unit * 5,
+    marginBottom: theme.spacing(5),
     width: "50%",
     maxWidth: "600px",
   },
@@ -167,17 +167,17 @@ export default (theme) => ({
   },
   textFieldS14: {
     width: "35%",
-    margin: theme.spacing.unit * 2,
+    margin: theme.spacing(2),
   },
   textFieldS7: {
     width: "80%",
-    marginBottom: theme.spacing.unit * 2,
+    marginBottom: theme.spacing(2),
   },
   space: {
     height: "10%",
   },
   selectEmpty: {
-    marginBottom: theme.spacing.unit * 5,
+    marginBottom: theme.spacing(5),
     width: "50%",
     maxWidth: "600px",
   },

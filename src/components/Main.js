@@ -1,4 +1,4 @@
-import React, {Component, useState} from 'react';
+import React, {useState} from 'react';
 import {withStyles} from '@material-ui/core/styles';
 import { MobileStepper,  Button }  from '@material-ui/core';
 import styles from "./styles/SlidesStyle";
@@ -11,7 +11,7 @@ import {SLIDE_05} from "./Results";
 import {SLIDE_06, SLIDE_07, SLIDE_08, SLIDE_09, SLIDE_10,
   SLIDE_11, SLIDE_12, SLIDE_13} from "./Feedback";
 
-const baseURL = 'https://bxmscxw7j1.execute-api.us-east-1.amazonaws.com/api';
+// const baseURL = 'https://bxmscxw7j1.execute-api.us-east-1.amazonaws.com/api';
 
 const questions = utils.survey_questions;
 const maxSteps = 23;
@@ -57,8 +57,17 @@ const Main = (props) => {
     setResults({...results, [name]: value});
   };
 
+  const resetValues = () => {
+    console.log("Resetting values");
+    setProfile(utils.profile);
+    setResults(utils.results);
+    setFeedback(utils.feedback);
+    setContact(utils.contact);
+  };
+
   const handleSubmit = () => {
-    axios.post(baseURL + '/notify', { ...this.state })
+    console.log("Posting results");
+    axios.post(process.env.CHALICE_URL + '/notify', { profile, results, feedback, contact })
       .then(res => {
         console.log(res.data);
       })
@@ -66,6 +75,7 @@ const Main = (props) => {
           console.log(error.response)
       });
     handleNext();
+    resetValues();
   };
 
   const renderSteps = (profile, results, feedback, contact, style) => {
@@ -120,13 +130,14 @@ const Main = (props) => {
     <div className={classes.containerS3}>
       <MobileStepper className={classes.stepper} steps={maxSteps} position="static" activeStep={currentStep}
                      nextButton={
-                       <Button size="small" onClick={handleNext} disabled={currentStep === maxSteps - 1 || (currentStep === 4 && isProfileIncomplete(profile))} href={""}>
+                       <Button size="small" onClick={handleNext} disabled={currentStep === maxSteps - 1 ||
+                       (currentStep === 4 && isProfileIncomplete(profile)) || currentStep === 21} href={""}>
                          Siguiente
                          <KeyboardArrowRight />
                        </Button>
                      }
                      backButton={
-                       <Button size="small" onClick={handleBack} disabled={currentStep === 0} href={""}>
+                       <Button size="small" onClick={handleBack} disabled={currentStep === 0 || currentStep === 22} href={""}>
                          <KeyboardArrowLeft />
                          Atrás
                        </Button>
