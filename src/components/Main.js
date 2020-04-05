@@ -67,7 +67,7 @@ const Main = (props) => {
 
   const handleSubmit = () => {
     console.log("Posting results");
-    axios.post(process.env.CHALICE_URL + '/notify', { profile, results, feedback, contact })
+    axios.post(process.env.REACT_APP_CHALICE_URL + '/notify', { profile, results, feedback, contact })
       .then(res => {
         console.log(res.data);
       })
