@@ -11,7 +11,7 @@ const ToggleButtonGroup = (props) => {
   };
 
   const buttons = buttonArray.map( (button, id) =>
-    <ToggleButton id={id} style={style} values={button} toggleClick={activation}/>
+    <ToggleButton key={id} id={id} style={style} values={button} toggleClick={activation}/>
   );
 
   return(
