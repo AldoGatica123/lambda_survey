@@ -1,5 +1,5 @@
 import React from "react";
-import {Typography, Fab, Paper} from "@material-ui/core";
+import {Typography, Fab, Paper, MuiThemeProvider, createMuiTheme} from "@material-ui/core";
 import {BiSwitch, ToggleButtonGroup} from "./ToggleButtonGroup";
 import {TextField, Slider, RadioGroup, FormControlLabel, Radio} from "@material-ui/core";
 
@@ -10,6 +10,13 @@ const marks = [
   { value: 4, label: 'Bueno'},
   { value: 5, label: 'Muy Bueno'},
 ];
+
+const theme = createMuiTheme({
+  palette: {
+    primary: { main: '#119b5f' },
+    secondary: { main: '#11cb5f' },
+  },
+});
 
 
 const PaperTitle = (props) => {
@@ -174,13 +181,16 @@ const SLIDE_11 = (props) => {
       <Paper className={style.paperS2} elevation={2} square={false}>
         <PaperTitle style={style} title={"¿Cuál es su valoración global sobre el espacio seguro que ofrece Lambda?"}/>
         <div className={style.containerS11}>
-          <RadioGroup className={style.containerToggleS11} name="global_valuation" value={values.global_valuation} onChange={handleChange}>
-            <FormControlLabel value="very_good" control={<Radio />} label="Muy Buena" />
-            <FormControlLabel value="good" control={<Radio />} label="Buena" />
-            <FormControlLabel value="regular" control={<Radio />} label="Regular" />
-            <FormControlLabel value="bad" control={<Radio />} label="Mala" />
-            <FormControlLabel value="very_bad" control={<Radio />} label="Muy Mala" />
-          </RadioGroup>
+
+          <MuiThemeProvider theme={theme}>
+            <RadioGroup className={style.containerToggleS11} name="global_valuation" value={values.global_valuation} onChange={handleChange}>
+              <FormControlLabel value="very_good" control={<Radio />} label="Muy Buena" />
+              <FormControlLabel value="good" control={<Radio />} label="Buena" />
+              <FormControlLabel value="regular" control={<Radio />} label="Regular" />
+              <FormControlLabel value="bad" control={<Radio />} label="Mala" />
+              <FormControlLabel value="very_bad" control={<Radio />} label="Muy Mala" />
+            </RadioGroup>
+          </MuiThemeProvider>
         </div>
       </Paper>
 
