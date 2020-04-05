@@ -41,7 +41,7 @@ const SLIDE_02 = (props) => {
           Fecha de la encuesta:
         </Typography>
 
-        <TextField name="survey_date" defaultValue="2020-12-31"
+        <TextField name="survey_date"
                    className={style.datePicker} type="date" onChange={handleChange} value={values.survey_date}
                    InputLabelProps={{shrink: true,}}/>
       </Paper>

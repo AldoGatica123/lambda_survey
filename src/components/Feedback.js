@@ -68,7 +68,7 @@ const SLIDE_07 = (props) => {
       <Paper className={style.paperS2} elevation={2} square={false}>
         <PaperTitle style={style} title={"¿Se le dió respuesta a sus necesidades?"}/>
 
-        <BiSwitch style={style} values={values.needs_met}/>
+        <BiSwitch style={style} values={values.needs_met} toggleClick={handleChange}/>
 
         <Typography className={style.grayTypo} variant={"h6"} component={"h6"}>
           Si su respuesta fue NO, por favor indicarnos por qué

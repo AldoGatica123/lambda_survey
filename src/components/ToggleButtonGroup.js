@@ -38,14 +38,13 @@ const BiSwitch = (props) => {
   const {style, values} = props;
   const [activated, setData] = useState(values);
 
-
   let leftStyle = activated.active ? style.switchLeftOn : style.switchLeftOff;
   let rightStyle = !activated.active ? style.switchRightOn : style.switchRightOff;
 
-  //TODO clicking the button twice has the result like clicking it once
   const switchClick = () => {
-    let newVal = activated;
-    newVal.active = !newVal.active;
+    console.log("Values: " + JSON.stringify(values));
+    let newVal = values;
+    newVal.active = !values.active;
     setData({...newVal});
   };
 

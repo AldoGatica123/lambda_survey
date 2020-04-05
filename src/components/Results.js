@@ -31,14 +31,14 @@ const SLIDE_05 = (props) => {
         </Typography>
         <Slider className={style.slider} value={values}
                 onChange={handleChangeResults(question.id)} marks={marks} step={1} min={1} max={5}
-                aria-labelledby="discrete-slider" valueLabelDisplay="none"/>
+                aria-labelledby="discrete-slider" valueLabelDisplay="auto"/>
         <Typography className={style.grayTypo} variant={"h6"} component={"h6"}>
           <b>Deslice su dedo para indicar su calificación</b>
         </Typography>
       </Paper>
 
       <Fab className={style.fabButton} onClick={nextStep}
-           variant="extended" color="white" aria-label="add" href={""}>
+           variant="extended" aria-label="add" href={""}>
         Siguiente
       </Fab>
     </div>
